@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>七寸扇</title>
+  
+  <subtitle>七寸扇</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.56chzh.com/"/>
+  <updated>2018-04-24T06:20:06.732Z</updated>
+  <id>http://blog.56chzh.com/</id>
+  
+  <author>
+    <name>七寸扇</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>添加laravel验证码</title>
+    <link href="http://blog.56chzh.com/2018/04/20/%E5%BC%80%E5%8F%91laravel%E6%89%A9%E5%B1%95/"/>
+    <id>http://blog.56chzh.com/2018/04/20/开发laravel扩展/</id>
+    <published>2018-04-20T06:35:20.000Z</published>
+    <updated>2018-04-24T06:20:06.732Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>第一步:<br>  在laravel项目根目录中创建文件夹packages/laravist/hasher/src</p></li><li><p>第二步:<br>  修改根目录下composer.json</p>  <a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"autoload"</span>: &#123;</span><br><span class="line">      <span class="string">"classmap"</span>: [</span><br><span class="line">          <span class="string">"database"</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="string">"psr-4"</span>: &#123;</span><br><span class="line">          <span class="string">"App\\"</span>: <span class="string">"app/"</span>,</span><br><span class="line">          <span class="string">"Sjzlai\\Code\\"</span>:<span class="string">"packages/laravist/hasher/src/"</span>    //此处添加新创建的文件夹</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></li><li><p>第三步:<br>  在terminal(文件根目录)执行命令:</p><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer dump-autoload</span><br></pre></td></tr></table></figure></code></pre></li><li><p>第四步:<br>  在src文件夹下创建PHPclass,编辑自己所要写的扩展<br>  写完扩展后生成一个provider</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan make:provider CodeServiceProvider</span><br></pre></td></tr></table></figure><blockquote><p>生成后的文件在app/Providers/CodeServiceProvider<br>将此文件移动到src目录中,并修改其明明空间<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">namespace   Sjzlai\Code;</span><br></pre></td></tr></table></figure></p></blockquote><ul><li>修改文件内register 方法</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public funciton <span class="function"><span class="title">register</span></span>()&#123;</span><br><span class="line">    <span class="variable">$this</span>-&gt;app-&gt;singleton(<span class="string">'md5hash'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> new MD5Hasher();</span><br><span class="line">    &#125;) //app(<span class="string">'md5hash'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>修改config目录下app.php<br>添加  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\Sjzlai\Code\CodeServiceProvider::class,</span><br></pre></td></tr></table></figure></li></ul><blockquote><p>此时配置已完成,可以在代码中正常使用!</p><p>效果图如下:<br><img src="/2018/04/20/开发laravel扩展/./code.png" alt=""></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第一步:&lt;br&gt;  在laravel项目根目录中创建文件夹packages/laravist/hasher/src&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第二步:&lt;br&gt;  修改根目录下composer.json&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+      <category term="laravel扩展" scheme="http://blog.56chzh.com/tags/laravel%E6%89%A9%E5%B1%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo: command not found</title>
+    <link href="http://blog.56chzh.com/2018/04/09/hexo-commandnotfound/"/>
+    <id>http://blog.56chzh.com/2018/04/09/hexo-commandnotfound/</id>
+    <published>2018-04-09T06:19:34.000Z</published>
+    <updated>2018-04-24T06:13:51.404Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>最近刚刚重新装了下电脑的系统,然后许多的环境和软件都需要重新下载和安装,当然博客肯定是要下载下来的.</p></li><li><p>在使用git将博客更新下来以后,发现在本地无法运行,报错:</p><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash: hexo: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure></li></ul><p>随即,经检查node和npm的版本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><ul><li>检查完后发现都没有问题!!!</li></ul><p>在查阅了资料后,需要执行以下命令:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><blockquote><p>执行完成后,即可使用以下命令进行本地启动了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></p><p>在浏览器中输入localhost:4000 进行访问</p></blockquote><p>以上问题解决了!!!</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最近刚刚重新装了下电脑的系统,然后许多的环境和软件都需要重新下载和安装,当然博客肯定是要下载下来的.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在使用git将博客更新下来以后,发现在本地无法运行,报错:&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://blog.56chzh.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>laravel模板继承</title>
+    <link href="http://blog.56chzh.com/2018/03/27/laravel%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF/"/>
+    <id>http://blog.56chzh.com/2018/03/27/laravel模板继承/</id>
+    <published>2018-03-27T01:31:49.000Z</published>
+    <updated>2018-04-09T06:08:59.451Z</updated>
+    
+    <content type="html"><![CDATA[<p>可以使用@include(‘模板名)直接引入其他视图,不存在继承关系<br><a id="more"></a><br><strong>继承视图可以使用以下两种方式:</strong></p><p><strong>第一种</strong></p><p>父视图中:使用@yield(‘content’),流出子视图显示位置</p><p>子视图中: 先使用@extends(“parent_filename”)先继承父视图,再使用@section(“content”) //子视图内容…@endsection继承父视图中的位置</p><p><strong>第二种</strong></p><p>父视图中: 使用@section(“flag-name”) //父视图内容…  @show 留出继承区域位置</p><p>子视图中:使用@extends(“父模板文件名”) 继承父视图;</p><p>使用@section(“flag-name”) 继承flag-name标记位;</p><p>使用@parent可以调用父视图对应标签中的内容;</p><p>使用@endsection 或 @stop 结束一个位置的继承,@endsection和@stop不同的事:@endsection之后,当前文件还可以被其他文件继承,而@stop表示终止,不再被继承.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;可以使用@include(‘模板名)直接引入其他视图,不存在继承关系&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lnmp支持thinkphp的rewrite规则</title>
+    <link href="http://blog.56chzh.com/2018/03/05/lnmp%E6%94%AF%E6%8C%81thinkphp%E7%9A%84rewrite%E8%A7%84%E5%88%99/"/>
+    <id>http://blog.56chzh.com/2018/03/05/lnmp支持thinkphp的rewrite规则/</id>
+    <published>2018-03-05T06:38:14.000Z</published>
+    <updated>2018-04-09T06:08:59.452Z</updated>
+    
+    <content type="html"><![CDATA[<p>如是使用<a href="&#39;lnmp.org&#39;">lnmp一件安装包</a>,则可直接修改vhost文件<br>修改内容如下:<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">    &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        <span class="comment">#listen [::]:80;</span></span><br><span class="line">        server_name *; <span class="comment">#填写你的域名地址</span></span><br><span class="line">        index index.html index.htm index.php default.html default.htm default.php;</span><br><span class="line">        root  /home/wwwroot/abc; <span class="comment">#填写项目根路径</span></span><br><span class="line">        include other.conf;</span><br><span class="line">        <span class="comment">#error_page   404   /404.html;</span></span><br><span class="line">        location / &#123;</span><br><span class="line"> root /home/wwwroot/abc/;<span class="comment">#你的根路径</span></span><br><span class="line"> index index.html index.htm index.php;</span><br><span class="line"> <span class="keyword">if</span> (!-e <span class="variable">$request_filename</span>) &#123;</span><br><span class="line"> rewrite ^/index.php(.*)$ /index.php?s=<span class="variable">$1</span> last;</span><br><span class="line"> rewrite ^(.*)$ /index.php?s=<span class="variable">$1</span> last;</span><br><span class="line"> <span class="built_in">break</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">        location ~ [^/]\.php(/|$)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment"># comment try_files $uri =404; to enable pathinfo</span></span><br><span class="line">            try_files <span class="variable">$uri</span> =404;</span><br><span class="line">            fastcgi_pass  unix:/tmp/php-cgi.sock;</span><br><span class="line">            fastcgi_index index.php;</span><br><span class="line">            include fastcgi.conf;</span><br><span class="line">            <span class="comment">#include pathinfo.conf;</span></span><br><span class="line">        &#125;</span><br><span class="line">        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$</span><br><span class="line">        &#123;</span><br><span class="line">            expires      30d;</span><br><span class="line">        &#125;</span><br><span class="line">        location ~ .*\.(js|css)?$</span><br><span class="line">        &#123;</span><br><span class="line">            expires      12h;</span><br><span class="line">        &#125;</span><br><span class="line">        access_log  /home/wwwlogs/abc.log; <span class="comment">#修改到相应的日志文件名称</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如是使用&lt;a href=&quot;&amp;#39;lnmp.org&amp;#39;&quot;&gt;lnmp一件安装包&lt;/a&gt;,则可直接修改vhost文件&lt;br&gt;修改内容如下:&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="lnmp" scheme="http://blog.56chzh.com/tags/lnmp/"/>
+    
+      <category term="rewrite" scheme="http://blog.56chzh.com/tags/rewrite/"/>
+    
+      <category term="thinkphp" scheme="http://blog.56chzh.com/tags/thinkphp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Laravel使用Redis共享Session</title>
+    <link href="http://blog.56chzh.com/2018/03/01/Laravel%E4%BD%BF%E7%94%A8Redis%E5%85%B1%E4%BA%ABSession/"/>
+    <id>http://blog.56chzh.com/2018/03/01/Laravel使用Redis共享Session/</id>
+    <published>2018-03-01T08:45:06.000Z</published>
+    <updated>2018-04-09T06:08:59.449Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、当系统的访问量上升的时候，使用Redis保存Session可以提高系统的性能，同时也方便多机负载的时候共享Session"><a href="#一、当系统的访问量上升的时候，使用Redis保存Session可以提高系统的性能，同时也方便多机负载的时候共享Session" class="headerlink" title="一、当系统的访问量上升的时候，使用Redis保存Session可以提高系统的性能，同时也方便多机负载的时候共享Session"></a>一、当系统的访问量上升的时候，使用Redis保存Session可以提高系统的性能，同时也方便多机负载的时候共享Session</h3><a id="more"></a><p>1.打开config/database.php。在redis中增加session的连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'session'</span>=&gt;[</span><br><span class="line">    <span class="string">'host'</span> =&gt;env(<span class="string">'REDIS_HOST'</span>,<span class="string">'127.0.0.1'</span>),</span><br><span class="line">    <span class="string">'password'</span> =&gt; env(<span class="string">'REDIS_PASSWORD'</span>, null),</span><br><span class="line">    <span class="string">'port'</span> =&gt; env(<span class="string">'REDIS_PORT'</span>, 6379),</span><br><span class="line">    <span class="string">'database'</span> =&gt; 10,</span><br><span class="line">],</span><br></pre></td></tr></table></figure><p>2.打开config/session.php,填入上边的redis连接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'connection'</span> =&gt; <span class="string">'session'</span>,</span><br></pre></td></tr></table></figure></p><p>3.修改env 使用redis存取session</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SESSION_DRIVER = redis</span><br></pre></td></tr></table></figure><p>现在访问系统.已经使用redis 保存session了,大学15%的性能提上(目前的项目)</p><p>####二、redis 访问配置， 为了使用其它的服务器能访问到redis需要配置redis远程访问</p><p>1.打开/etc/redis.conf修改bind信息,如当前服务器局域网IP为10.0.0.2</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bind</span>  127.0.0.1  10.0.0.2</span><br></pre></td></tr></table></figure><ol><li>修改protected-mode<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protected-mode no</span><br></pre></td></tr></table></figure></li></ol><p>3.重新加载redis配置</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service redis-server reload</span><br></pre></td></tr></table></figure><p>4.注册检查iptable是否打开了6379端口访问<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -s 10.0.0.2 -p tcp -m state  --state NEW -m tcp --dport 6379 -j ACCEPT</span><br></pre></td></tr></table></figure></p><ol><li>其他服务器修改env<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REDIS_HOST=10.0.0.2</span><br></pre></td></tr></table></figure></li></ol><p>现在其他的服务器可以访问redis服务器了.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、当系统的访问量上升的时候，使用Redis保存Session可以提高系统的性能，同时也方便多机负载的时候共享Session&quot;&gt;&lt;a href=&quot;#一、当系统的访问量上升的时候，使用Redis保存Session可以提高系统的性能，同时也方便多机负载的时候共享Session&quot; class=&quot;headerlink&quot; title=&quot;一、当系统的访问量上升的时候，使用Redis保存Session可以提高系统的性能，同时也方便多机负载的时候共享Session&quot;&gt;&lt;/a&gt;一、当系统的访问量上升的时候，使用Redis保存Session可以提高系统的性能，同时也方便多机负载的时候共享Session&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+      <category term="redis" scheme="http://blog.56chzh.com/tags/redis/"/>
+    
+      <category term="session" scheme="http://blog.56chzh.com/tags/session/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Nginx对Laravel进行负载</title>
+    <link href="http://blog.56chzh.com/2018/03/01/%E4%BD%BF%E7%94%A8Nginx%E5%AF%B9Laravel%E8%BF%9B%E8%A1%8C%E8%B4%9F%E8%BD%BD/"/>
+    <id>http://blog.56chzh.com/2018/03/01/使用Nginx对Laravel进行负载/</id>
+    <published>2018-03-01T08:34:58.000Z</published>
+    <updated>2018-04-09T06:08:59.454Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="有两台web服务器-A-10-0-0-2-B-10-0-0-3，系统的域名为-www-c-com，使用A使用为反向代理服务器"><a href="#有两台web服务器-A-10-0-0-2-B-10-0-0-3，系统的域名为-www-c-com，使用A使用为反向代理服务器" class="headerlink" title="有两台web服务器 A:10.0.0.2 , B:10.0.0.3，系统的域名为 www.c.com，使用A使用为反向代理服务器"></a>有两台web服务器 A:10.0.0.2 , B:10.0.0.3，系统的域名为 www.c.com，使用A使用为反向代理服务器</h4><h4 id="A服务器的nginx配置"><a href="#A服务器的nginx配置" class="headerlink" title="A服务器的nginx配置"></a>A服务器的nginx配置</h4><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 81;</span><br><span class="line">server_name _;</span><br><span class="line"></span><br><span class="line">index index.html index.htm index.php;</span><br><span class="line">access_log /data/wwwroot/wwwlogs/www_nginx.log combined;</span><br><span class="line">root /data/wwwroot/www/public;</span><br><span class="line"></span><br><span class="line">location / &#123;</span><br><span class="line">    try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query_string</span>;</span><br><span class="line">&#125;</span><br><span class="line">location ~ .*\.(php|php5)?$ &#123;</span><br><span class="line">   fastcgi_pass unix:/dev/shm/php-cgi.sock;</span><br><span class="line">    fastcgi_index index.php;</span><br><span class="line">    include fastcgi.conf;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|ico)$ &#123;</span><br><span class="line">    expires 30d;</span><br><span class="line">    access_log off;</span><br><span class="line">    &#125;</span><br><span class="line">location ~ .*\.(js|css)?$ &#123;</span><br><span class="line">    expires 7d;</span><br><span class="line">    access_log off;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>####B服务器nginx设置</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name -;</span><br><span class="line"></span><br><span class="line">index index.html index.htm index.php;</span><br><span class="line">access_log /data/wwwlogs/www_nginx.log combined;</span><br><span class="line">root /data/wwwroot/www/public;</span><br><span class="line"></span><br><span class="line">location / &#123;</span><br><span class="line">    try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query_string</span>;</span><br><span class="line">&#125;</span><br><span class="line">location ~ .*\.(php|php5)?$ &#123;</span><br><span class="line"> </span><br><span class="line">   fastcgi_pass unix:/dev/shm/php-cgi.sock;</span><br><span class="line">    fastcgi_index index.php;</span><br><span class="line">    include fastcgi.conf;</span><br><span class="line">    &#125;</span><br><span class="line">location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|ico)$ &#123;</span><br><span class="line">    expires 30d;</span><br><span class="line">    access_log off;</span><br><span class="line">    &#125;</span><br><span class="line">location ~ .*\.(js|css)?$ &#123;</span><br><span class="line">    expires 7d;</span><br><span class="line">    access_log off;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>####A服务器上的饭香代理服务器设置</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">upstream backend&#123;</span><br><span class="line">    ip_hash;</span><br><span class="line">    server 127.0.0.1:81;</span><br><span class="line">    server 10.0.0.3;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name www.c.com;</span><br><span class="line"></span><br><span class="line">index index.html index.htm index.php;</span><br><span class="line">access_log /data/wwwroot/wwwlogs/www_nginx.log combined;</span><br><span class="line">root /data/wwwroot/www/public;</span><br><span class="line"></span><br><span class="line">location / &#123;</span><br><span class="line">    proxy_pass http://backend;</span><br><span class="line">    proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">    proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">    proxy_set_header REMOTE-HOST <span class="variable">$remote_addr</span>;</span><br><span class="line">    proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">&#125;</span><br><span class="line">location ~ .*\.(php|php5)?$ &#123;</span><br><span class="line">    fastcgi_pass unix:/dev/shm/php-cgi.sock;</span><br><span class="line">    fastcgi_index index.php;</span><br><span class="line">    include fastcgi.conf;</span><br><span class="line">    &#125;</span><br><span class="line">location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|ico)$ &#123;</span><br><span class="line">    expires 30d;</span><br><span class="line">    access_log off;</span><br><span class="line">    &#125;</span><br><span class="line">location ~ .*\.(js|css)?$ &#123;</span><br><span class="line">    expires 7d;</span><br><span class="line">    access_log off;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>如果是微信公众号,使用了easywechat,需要把backennd代换为你的www.c.com这样才支持微信授权<br>微信的access_token需要使用redis共享，easywechat默认使用laravel 的缓存，所以需要把.env的缓存改成使用redis<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CACHE_DRIVER =redis</span><br></pre></td></tr></table></figure></li></ul><p>####Laravel 中使用 Request::getClientIp()获取到的IP不是真实的IP，需要修改app/Providers/AppServiceProvider.php,设置信任代理服务器的IP（127.0.0.1，10.0.0.2),就可以使用Request::getClientIp()获真实IP了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">function</span> boot()</span><br><span class="line">&#123;</span><br><span class="line">    \Request::setTrustedProxies([<span class="string">'127.0.0.1'</span>,<span class="string">'10.0.0.2'</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;有两台web服务器-A-10-0-0-2-B-10-0-0-3，系统的域名为-www-c-com，使用A使用为反向代理服务器&quot;&gt;&lt;a href=&quot;#有两台web服务器-A-10-0-0-2-B-10-0-0-3，系统的域名为-www-c-com，使用A使用为反向代理服务器&quot; class=&quot;headerlink&quot; title=&quot;有两台web服务器 A:10.0.0.2 , B:10.0.0.3，系统的域名为 www.c.com，使用A使用为反向代理服务器&quot;&gt;&lt;/a&gt;有两台web服务器 A:10.0.0.2 , B:10.0.0.3，系统的域名为 www.c.com，使用A使用为反向代理服务器&lt;/h4&gt;&lt;h4 id=&quot;A服务器的nginx配置&quot;&gt;&lt;a href=&quot;#A服务器的nginx配置&quot; class=&quot;headerlink&quot; title=&quot;A服务器的nginx配置&quot;&gt;&lt;/a&gt;A服务器的nginx配置&lt;/h4&gt;
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+      <category term="Nginx" scheme="http://blog.56chzh.com/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ajax小结</title>
+    <link href="http://blog.56chzh.com/2018/02/26/ajax%E5%B0%8F%E7%BB%93/"/>
+    <id>http://blog.56chzh.com/2018/02/26/ajax小结/</id>
+    <published>2018-02-26T06:38:15.000Z</published>
+    <updated>2018-04-09T06:08:59.450Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="1-延迟时间"><a href="#1-延迟时间" class="headerlink" title="1. 延迟时间"></a>1. 延迟时间</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    $(<span class="string">"#id"</span>).html(datastr);</span><br><span class="line">  &#125;, 1000);</span><br></pre></td></tr></table></figure><a id="more"></a><h5 id="2-jq返回上一页面"><a href="#2-jq返回上一页面" class="headerlink" title="2.jq返回上一页面"></a>2.jq返回上一页面</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.location = document.referrer;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;1-延迟时间&quot;&gt;&lt;a href=&quot;#1-延迟时间&quot; class=&quot;headerlink&quot; title=&quot;1. 延迟时间&quot;&gt;&lt;/a&gt;1. 延迟时间&lt;/h5&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;setTimeout(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt; () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;#id&quot;&lt;/span&gt;).html(datastr);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;, 1000);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="ajax" scheme="http://blog.56chzh.com/tags/ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客部署到个人服务器</title>
+    <link href="http://blog.56chzh.com/2018/02/22/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://blog.56chzh.com/2018/02/22/Hexo博客部署到个人服务器/</id>
+    <published>2018-02-22T01:28:20.000Z</published>
+    <updated>2018-04-09T06:08:59.449Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文跳过阿里云创建git仓库、hexo部署到github的步骤，有需要的可以移步下面博客地址查看：</p><ol><li><p>在阿里云服务器上创建git远程仓库</p></li><li><p>使用Hexo建立博客</p></li></ol><h1 id="一、服务器相关配置"><a href="#一、服务器相关配置" class="headerlink" title="一、服务器相关配置"></a>一、服务器相关配置</h1><a id="more"></a><p>本文使用hexo在本地生成静态文件，然后将静态文件提交到个人服务器的git仓库，最后用Nginx提供web服务的方式。</p><h1 id="1、Nginx配置"><a href="#1、Nginx配置" class="headerlink" title="1、Nginx配置"></a>1、Nginx配置</h1><p>Nginx正常配置一个虚拟主机来存放静态文件即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">     &#123;</span><br><span class="line">         listen 80;</span><br><span class="line">         <span class="comment">#listen [::]:80;</span></span><br><span class="line">         server_name blog.qicunshan.com ;</span><br><span class="line">         index index.html index.htm index.php default.html default.htm default.php;</span><br><span class="line">         root  /home/wwwroot/blog.qicunshan.com/blog;</span><br><span class="line"></span><br><span class="line">         <span class="comment">#include other.conf;</span></span><br><span class="line">         <span class="comment">#error_page   404   /404.html;</span></span><br><span class="line"></span><br><span class="line">         <span class="comment"># Deny access to PHP files in specific directory</span></span><br><span class="line">         <span class="comment">#location ~ /(wp-content|uploads|wp-includes|images)/.*\.php$ &#123; deny all; &#125;</span></span><br><span class="line"></span><br><span class="line">         include <span class="built_in">enable</span>-php.conf;</span><br><span class="line"></span><br><span class="line">         location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$</span><br><span class="line">         &#123;</span><br><span class="line">             expires      30d;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ .*\.(js|css)?$</span><br><span class="line">         &#123;</span><br><span class="line">             expires      12h;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ /.well-known &#123;</span><br><span class="line">             allow all;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ /\.</span><br><span class="line">         &#123;</span><br><span class="line">             deny all;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         access_log  /home/wwwlogs/blog.qicunshan.com.log;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure><p>需要注意的是：</p><ul><li><p>git用户的权限；</p></li><li><p>虚拟主机路径，且默认主页是index.html。</p></li></ul><h1 id="2、创建git仓库"><a href="#2、创建git仓库" class="headerlink" title="2、创建git仓库"></a>2、创建git仓库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建仓库目录</span></span><br><span class="line">mkdir blog.git</span><br><span class="line"><span class="comment">#进入仓库目录</span></span><br><span class="line"><span class="built_in">cd</span> blog.git</span><br><span class="line"><span class="comment">#创建仓库</span></span><br><span class="line">git init --bare</span><br></pre></td></tr></table></figure><p>创建完后可以使用下面命令测试一下仓库地址，克隆成功说明没有问题。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> 仓库地址</span><br></pre></td></tr></table></figure><h1 id="3、Git-hooks配置"><a href="#3、Git-hooks配置" class="headerlink" title="3、Git hooks配置"></a>3、Git hooks配置</h1><ul><li>新建脚本，使git hooks每次push完成之后，将仓库中的静态文件复制到Nginx对应的虚拟主机中；</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新建脚本</span></span><br><span class="line">vim post-receive</span><br></pre></td></tr></table></figure><h5 id="脚本内容如下"><a href="#脚本内容如下" class="headerlink" title="脚本内容如下:"></a>脚本内容如下:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash -l</span></span><br><span class="line"><span class="comment">#git仓库目录</span></span><br><span class="line">GIT_REPO=/var/git/blog.git</span><br><span class="line"><span class="comment">#临时文件目录</span></span><br><span class="line">TMP_GIT_CLONE=/var/git/tmp/blog</span><br><span class="line"><span class="comment">#虚拟主机目录</span></span><br><span class="line">PUBLIC_WWW=/home/wwwroot/blog.qicunshan.com</span><br><span class="line">rm -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span></span><br><span class="line">git <span class="built_in">clone</span> <span class="variable">$GIT_REPO</span> <span class="variable">$TMP_GIT_CLONE</span></span><br><span class="line">rm -rf <span class="variable">$&#123;PUBLIC_WWW&#125;</span>/*</span><br><span class="line">cp -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span> <span class="variable">$&#123;PUBLIC_WWW&#125;</span></span><br></pre></td></tr></table></figure><ul><li>git用户关于post-receive脚本及内容的权限、虚拟主机的权限：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#赋予文件、文件夹权限</span></span><br><span class="line">chmod 777 post-receive</span><br><span class="line">chmod 777 -R /var/git/tmp</span><br><span class="line">chmod 777 -R /home/wwwroot/blog.qicunshan.com</span><br><span class="line"><span class="comment">#赋予git用户权限</span></span><br><span class="line">chown git:git -R /var/git/tmp</span><br><span class="line">chown git:git -R /home/wwwroot/blog.qicunshan.com</span><br></pre></td></tr></table></figure></li></ul><h1 id="二、本机Hexo配置"><a href="#二、本机Hexo配置" class="headerlink" title="二、本机Hexo配置"></a>二、本机Hexo配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment">#repo: git@github.com:qicunshan/qicunshan.github.io.git</span></span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:qicunshan/qicunshan.github.io.git</span><br><span class="line">    vps:  git@服务器地址:/home/hexo.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>然后在hexo目录下执行Hexo g -d即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文跳过阿里云创建git仓库、hexo部署到github的步骤，有需要的可以移步下面博客地址查看：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在阿里云服务器上创建git远程仓库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用Hexo建立博客&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;一、服务器相关配置&quot;&gt;&lt;a href=&quot;#一、服务器相关配置&quot; class=&quot;headerlink&quot; title=&quot;一、服务器相关配置&quot;&gt;&lt;/a&gt;一、服务器相关配置&lt;/h1&gt;
+    
+    </summary>
+    
+    
+      <category term="阿里云" scheme="http://blog.56chzh.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+      <category term="git" scheme="http://blog.56chzh.com/tags/git/"/>
+    
+      <category term="hexo" scheme="http://blog.56chzh.com/tags/hexo/"/>
+    
+      <category term="github" scheme="http://blog.56chzh.com/tags/github/"/>
+    
+      <category term="hooks" scheme="http://blog.56chzh.com/tags/hooks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>laravel解决跨域问题</title>
+    <link href="http://blog.56chzh.com/2018/02/09/laravel%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+    <id>http://blog.56chzh.com/2018/02/09/laravel解决跨域问题/</id>
+    <published>2018-02-09T07:35:20.000Z</published>
+    <updated>2018-04-09T06:08:59.451Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>1.使用命令:php artisan make:middleware Header<a id="more"></a><blockquote><p>在文件内写入</p></blockquote></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace App\Http\Middleware;</span><br><span class="line"></span><br><span class="line">use Closure;</span><br><span class="line"></span><br><span class="line">class Header</span><br><span class="line">&#123;</span><br><span class="line">    /**</span><br><span class="line">     * Handle an incoming request.</span><br><span class="line">     *</span><br><span class="line">     * @param  \Illuminate\Http\Request  <span class="variable">$request</span></span><br><span class="line">     * @param  \Closure  <span class="variable">$next</span></span><br><span class="line">     * @<span class="built_in">return</span> mixed</span><br><span class="line">     */</span><br><span class="line">    public <span class="keyword">function</span> handle(<span class="variable">$request</span>, Closure <span class="variable">$next</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$response</span>  = <span class="variable">$next</span>(<span class="variable">$request</span>);</span><br><span class="line">        <span class="variable">$response</span>-&gt;header(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://www.ibs-bj.com'</span>);</span><br><span class="line">        <span class="variable">$response</span>-&gt;header(<span class="string">'Access-Control-Allow-Credentials'</span>, <span class="string">'true'</span>);</span><br><span class="line">        <span class="built_in">return</span> <span class="variable">$response</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><p>2.修改/app/Http/Kernel.php</p><blockquote><p>在 protected $routeMiddleware中添加</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'headers'</span> =&gt; \App\Http\Middleware\Header::class,</span><br></pre></td></tr></table></figure></blockquote></li><li><p>3.最后修改routes.php</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route::group([<span class="string">'middleware'</span> =&gt; <span class="string">'headers'</span>],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="comment">#写相应的路由</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><blockquote><p>若有文件下载路由需写在group外</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;1.使用命令:php artisan make:middleware Header&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+      <category term="跨域" scheme="http://blog.56chzh.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为lnmp一键安装包下PHP编译安装fileinfo扩展</title>
+    <link href="http://blog.56chzh.com/2018/02/09/%E4%B8%BAlnmp%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8BPHP%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85fileinfo%E6%89%A9%E5%B1%95/"/>
+    <id>http://blog.56chzh.com/2018/02/09/为lnmp一键安装包下PHP编译安装fileinfo扩展/</id>
+    <published>2018-02-09T04:04:00.000Z</published>
+    <updated>2018-04-09T06:08:59.453Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1-安装前建议先执行-usr-local-php-bin-php-m-查看所有安装的模块"><a href="#1-安装前建议先执行-usr-local-php-bin-php-m-查看所有安装的模块" class="headerlink" title="1.安装前建议先执行/usr/local/php/bin/php -m 查看所有安装的模块"></a>1.安装前建议先执行/usr/local/php/bin/php -m 查看所有安装的模块</h4><h4 id="2-首先进入PHP安装目录的ext目录-找到并进入要安装扩展的文件夹-我们要安装fileinfo扩展"><a href="#2-首先进入PHP安装目录的ext目录-找到并进入要安装扩展的文件夹-我们要安装fileinfo扩展" class="headerlink" title="2.首先进入PHP安装目录的ext目录,找到并进入要安装扩展的文件夹,我们要安装fileinfo扩展"></a>2.首先进入PHP安装目录的ext目录,找到并进入要安装扩展的文件夹,我们要安装fileinfo扩展</h4><ul><li>查看php文件是否是压缩包, 如是压缩包即进行解压(我的php版本是7.1.7)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf php-7.1.7</span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><ul><li>解压后进入其目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/lnmp1.4/src/php-7.1.7/ext/fileinfo</span><br></pre></td></tr></table></figure></li></ul><h4 id="3-再执行-usr-local-php-bin-phpize-会返回如下类似信息"><a href="#3-再执行-usr-local-php-bin-phpize-会返回如下类似信息" class="headerlink" title="3.再执行/usr/local/php/bin/phpize 会返回如下类似信息:"></a>3.再执行/usr/local/php/bin/phpize 会返回如下类似信息:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Configuring <span class="keyword">for</span>:</span><br><span class="line"></span><br><span class="line">PHP Api Version: 20131106</span><br><span class="line"></span><br><span class="line">Zend Module Api No: 20131226</span><br><span class="line"></span><br><span class="line">Zend Extension Api No: 220131226</span><br></pre></td></tr></table></figure><h4 id="4-再执行以下命令"><a href="#4-再执行以下命令" class="headerlink" title="4.再执行以下命令:"></a>4.再执行以下命令:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$  ./configure --with-php-config=/usr/<span class="built_in">local</span>/php/bin/php-config</span><br><span class="line"></span><br><span class="line">$  make &amp;&amp; make install</span><br></pre></td></tr></table></figure><h4 id="5-执行完返回"><a href="#5-执行完返回" class="headerlink" title="5.执行完返回"></a>5.执行完返回</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Build complete.</span><br><span class="line"></span><br><span class="line">Don<span class="string">'t forget to run '</span>make <span class="built_in">test</span><span class="string">'.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Installing shared extensions: /usr/local/php/lib/php/extensions/no-debug-non-zts-20131226/</span></span><br></pre></td></tr></table></figure><h4 id="6-表示已经编译安装成功-再修改-usr-local-php-etc-php-ini-加入"><a href="#6-表示已经编译安装成功-再修改-usr-local-php-etc-php-ini-加入" class="headerlink" title="6.表示已经编译安装成功,再修改/usr/local/php/etc/php.ini,加入:"></a>6.表示已经编译安装成功,再修改/usr/local/php/etc/php.ini,加入:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension = fileinfo.so</span><br></pre></td></tr></table></figure><h4 id="7-最后重启php-fpm服务即可完成fileinfo扩展安装"><a href="#7-最后重启php-fpm服务即可完成fileinfo扩展安装" class="headerlink" title="7. 最后重启php-fpm服务即可完成fileinfo扩展安装"></a>7. 最后重启php-fpm服务即可完成fileinfo扩展安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnmp php-fpm restart</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1-安装前建议先执行-usr-local-php-bin-php-m-查看所有安装的模块&quot;&gt;&lt;a href=&quot;#1-安装前建议先执行-usr-local-php-bin-php-m-查看所有安装的模块&quot; class=&quot;headerlink&quot; title=&quot;1.安装前建议先执行/usr/local/php/bin/php -m 查看所有安装的模块&quot;&gt;&lt;/a&gt;1.安装前建议先执行/usr/local/php/bin/php -m 查看所有安装的模块&lt;/h4&gt;&lt;h4 id=&quot;2-首先进入PHP安装目录的ext目录-找到并进入要安装扩展的文件夹-我们要安装fileinfo扩展&quot;&gt;&lt;a href=&quot;#2-首先进入PHP安装目录的ext目录-找到并进入要安装扩展的文件夹-我们要安装fileinfo扩展&quot; class=&quot;headerlink&quot; title=&quot;2.首先进入PHP安装目录的ext目录,找到并进入要安装扩展的文件夹,我们要安装fileinfo扩展&quot;&gt;&lt;/a&gt;2.首先进入PHP安装目录的ext目录,找到并进入要安装扩展的文件夹,我们要安装fileinfo扩展&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;查看php文件是否是压缩包, 如是压缩包即进行解压(我的php版本是7.1.7)&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar -xvf php-7.1.7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="lnmp" scheme="http://blog.56chzh.com/tags/lnmp/"/>
+    
+      <category term="fileinfo" scheme="http://blog.56chzh.com/tags/fileinfo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux安装卸载nodejs</title>
+    <link href="http://blog.56chzh.com/2018/02/06/linux%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BDnodejs/"/>
+    <id>http://blog.56chzh.com/2018/02/06/linux安装卸载nodejs/</id>
+    <published>2018-02-06T01:30:21.000Z</published>
+    <updated>2018-04-09T06:08:59.452Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h1><p>先切换到root用户安装openssl-devel</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su -</span><br><span class="line">yum install openssl-devel</span><br></pre></td></tr></table></figure><a id="more"></a><ul><li>下载源代码自己编译以下代码中的tar.gz包根据node.js官网上的版本来定，比如我现在最新是 0.10.29</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</span><br><span class="line">wget http://nodejs.org/dist/v8.9.3/node-v8.9.3.tar.gz</span><br><span class="line">tar zxvf node-v0.10.29.tar.gz</span><br><span class="line"><span class="built_in">cd</span> node-v0.10.29</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><ul><li>检查一下版本号看是否安装成功</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">v0.10.29</span><br></pre></td></tr></table></figure><h1 id="卸载nodejs"><a href="#卸载nodejs" class="headerlink" title="卸载nodejs"></a>卸载nodejs</h1><h3 id="用自带的包管理先删除一次"><a href="#用自带的包管理先删除一次" class="headerlink" title="用自带的包管理先删除一次"></a>用自带的包管理先删除一次</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove nodejs npm -y</span><br></pre></td></tr></table></figure><ul><li>依此类推,查看操作系统用什么包管理,比如推出如果你使用brew安装的node需要用brew先删除一次</li></ul><h3 id="手动删除残留"><a href="#手动删除残留" class="headerlink" title="手动删除残留"></a>手动删除残留</h3><blockquote><p>进入/usr/local/lib删除所有node和node_modules文件夹<br>进入/usr/local/include删除所有node和node_modules文件夹<br>检查 ~文件夹里面的”local” “lib” “include” 文件夹,然后删除里面的所有 “node” 和”node_modeules”文件夹</p></blockquote><ul><li>可以使用以下命令查找</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find ~/ -name node</span><br><span class="line">find ~/ -name node_modules</span><br></pre></td></tr></table></figure><h4 id="进入-usr-local-bin-删除-node-的可执行文件"><a href="#进入-usr-local-bin-删除-node-的可执行文件" class="headerlink" title="进入 /usr/local/bin 删除 node 的可执行文件"></a>进入 /usr/local/bin 删除 node 的可执行文件</h4><blockquote><p>以下步骤可选:<br>删除: /usr/local/bin/npm<br>删除: /usr/local/share/man/man1/node.1<br>删除: /usr/local/lib/dtrace/node.d<br>删除: rm -rf /home/[homedir]/.npm<br>删除: rm -rf /home/root/.npm</p></blockquote><h4 id="配置node反向代理"><a href="#配置node反向代理" class="headerlink" title="配置node反向代理"></a>配置node反向代理</h4><blockquote><p>修改/usr/local/nginx/conf/nginx.conf</p></blockquote><p>在文件末尾添加:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include /usr/<span class="built_in">local</span>/nginx/include/*;</span><br></pre></td></tr></table></figure></p><h4 id="新建文件-nginx-node-conf"><a href="#新建文件-nginx-node-conf" class="headerlink" title="新建文件 nginx.node.conf"></a>新建文件 nginx.node.conf</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">upstream nodejs &#123;</span><br><span class="line">    server 127.0.0.1:3030;</span><br><span class="line">    <span class="comment">#server 127.0.0.1:3030;</span></span><br><span class="line">    keepalive 64;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name www.ibs-bj.com ibs-bj.com;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass      http://127.0.0.1:3030;</span><br><span class="line">&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;安装nodejs&quot;&gt;&lt;a href=&quot;#安装nodejs&quot; class=&quot;headerlink&quot; title=&quot;安装nodejs&quot;&gt;&lt;/a&gt;安装nodejs&lt;/h1&gt;&lt;p&gt;先切换到root用户安装openssl-devel&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;su -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum install openssl-devel&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="nodejs" scheme="http://blog.56chzh.com/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux命令</title>
+    <link href="http://blog.56chzh.com/2018/02/02/linux%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.56chzh.com/2018/02/02/linux命令/</id>
+    <published>2018-02-02T03:21:43.000Z</published>
+    <updated>2018-04-09T06:08:59.452Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>linux下使用find命令查找文件或目录</li></ol><ul><li>查找根目录下python有关的文件,-i忽略大小写<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /-iname <span class="string">"*python*"</span></span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><ul><li>在/data目录下查找以.txt结尾的文件</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /data -name <span class="string">"*.txt"</span></span><br></pre></td></tr></table></figure><ul><li>在/data 目录下查找以.txt或.py结尾的文件, -o或者</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">find /data -name <span class="string">"*.txt"</span> -o -name <span class="string">"*.py"</span></span><br></pre></td></tr></table></figure><ul><li><p>匹配文件或者目录</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /data/ -path <span class="string">"*python*"</span></span><br></pre></td></tr></table></figure><ul><li>在/data下查找不是以.txt结尾的文件</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /data ! -name <span class="string">"*.txt"</span></span><br></pre></td></tr></table></figure><ul><li><p>根据文件类型进行搜索</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /data ! -name <span class="string">"*.txt"</span></span><br></pre></td></tr></table></figure><p>更多相关命令查看<a href="http://man.linuxde.net/find" target="_blank" rel="noopener">http://man.linuxde.net/find</a></p></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;linux下使用find命令查找文件或目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;查找根目录下python有关的文件,-i忽略大小写&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find /-iname &lt;span class=&quot;string&quot;&gt;&quot;*python*&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="find" scheme="http://blog.56chzh.com/tags/find/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>laravel项目报错</title>
+    <link href="http://blog.56chzh.com/2018/01/31/laravel%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99/"/>
+    <id>http://blog.56chzh.com/2018/01/31/laravel项目报错/</id>
+    <published>2018-01-31T03:41:47.000Z</published>
+    <updated>2018-04-09T06:08:59.452Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>laravel项目return back()-&gt;withErrors($validator)或return back()-&gt;with(‘errors’,’原密码错误！’)在前台原密码错误的情况下不能正确显示错误信息，变成报错！</p></li><li><p>执行:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan --version</span><br></pre></td></tr></table></figure></li><li><p>查看版本,如果是5.2.26以上的,在路由文件routes.php删除web中间件分组</p></li></ul><a id="more"></a><ul><li>控制器Controller内返回错误内容</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">return</span> back()-&gt;withErrors([<span class="string">'用户名或密码错误'</span>]);</span><br></pre></td></tr></table></figure><ul><li>视图View内展示错误信息:</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    @<span class="keyword">if</span>(count(<span class="variable">$errors</span>) &gt; 0)</span><br><span class="line">        &lt;div class=<span class="string">"alert alert-danger"</span>&gt;</span><br><span class="line">            &lt;ul style=<span class="string">"color:red"</span>&gt;</span><br><span class="line">            @foreach(<span class="variable">$errors</span>-&gt;all() as <span class="variable">$error</span>)</span><br><span class="line">                &lt;li&gt;&#123;&#123;<span class="variable">$error</span>&#125;&#125;&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    @endif</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;laravel项目return back()-&amp;gt;withErrors($validator)或return back()-&amp;gt;with(‘errors’,’原密码错误！’)在前台原密码错误的情况下不能正确显示错误信息，变成报错！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;执行:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;php artisan --version&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看版本,如果是5.2.26以上的,在路由文件routes.php删除web中间件分组&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+      <category term="302" scheme="http://blog.56chzh.com/tags/302/"/>
+    
+      <category term="withErrors" scheme="http://blog.56chzh.com/tags/withErrors/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lnmp配置修改</title>
+    <link href="http://blog.56chzh.com/2018/01/30/lnmp%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9/"/>
+    <id>http://blog.56chzh.com/2018/01/30/lnmp配置修改/</id>
+    <published>2018-01-30T04:00:42.000Z</published>
+    <updated>2018-04-09T06:08:59.453Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="linux环境下安装lnmp"><a href="#linux环境下安装lnmp" class="headerlink" title="linux环境下安装lnmp"></a>linux环境下安装lnmp</h1><ul><li>运行以下命令</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; <span class="built_in">cd</span> lnmp1.4 &amp;&amp; ./install.sh lnmp</span><br></pre></td></tr></table></figure><blockquote><p>根据自己的喜好安装Mysql版本.<br>  设置mysql的root密码.<br>  选择PHP版本<br>  选择是否安装内存优化<br>  选择Apache版本</p></blockquote><ul><li>提示”Press any key to install…or Press Ctrl+c to cancel”后，按回车键确认开始安装。<a id="more"></a><h1 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h1></li><li>如果显示Nginx: OK，MySQL: OK，PHP: OK</li></ul><h1 id="修改php-ini配置"><a href="#修改php-ini配置" class="headerlink" title="修改php.ini配置"></a>修改php.ini配置</h1><ul><li><p>将文件内display_error 打开, 之后可看到报错信息.</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dispaly_error</span> = <span class="literal">on</span></span><br></pre></td></tr></table></figure></li><li><p>原因是nginx不允许访问网站的上级目录</p><blockquote><p>解决方法:<br>  将设置了open_basedir的地方注释掉<br>  1.nginx的fastcgi.conf<br>  2.项目目录中的.user.ini</p></blockquote></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> fastcgi_param PHP_ADMIN_VALUE <span class="string">"open_basedir=<span class="variable">$decument_root</span>/:/tmp/:/proc/"</span>;</span></span><br></pre></td></tr></table></figure><h1 id="以上设置完成后-访问时报404"><a href="#以上设置完成后-访问时报404" class="headerlink" title="以上设置完成后,访问时报404"></a>以上设置完成后,访问时报404</h1><ul><li>原因:路由重写<h5 id="usr-local-nginx-conf-other-conf"><a href="#usr-local-nginx-conf-other-conf" class="headerlink" title="/usr/local/nginx/conf/other.conf"></a>/usr/local/nginx/conf/other.conf</h5></li><li>在此文件内填写<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (  !-f  <span class="variable">$request_filename</span>  )  &#123;</span><br><span class="line">rewrite  ^/(.*)$  /index.php last;<span class="comment">#rewrite</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;linux环境下安装lnmp&quot;&gt;&lt;a href=&quot;#linux环境下安装lnmp&quot; class=&quot;headerlink&quot; title=&quot;linux环境下安装lnmp&quot;&gt;&lt;/a&gt;linux环境下安装lnmp&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;运行以下命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.4.tar.gz &amp;amp;&amp;amp; &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; lnmp1.4 &amp;amp;&amp;amp; ./install.sh lnmp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;根据自己的喜好安装Mysql版本.&lt;br&gt;  设置mysql的root密码.&lt;br&gt;  选择PHP版本&lt;br&gt;  选择是否安装内存优化&lt;br&gt;  选择Apache版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;提示”Press any key to install…or Press Ctrl+c to cancel”后，按回车键确认开始安装。&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="lnmp" scheme="http://blog.56chzh.com/tags/lnmp/"/>
+    
+      <category term="rewrite" scheme="http://blog.56chzh.com/tags/rewrite/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git命令指南</title>
+    <link href="http://blog.56chzh.com/2018/01/30/git%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/"/>
+    <id>http://blog.56chzh.com/2018/01/30/git命令指南/</id>
+    <published>2018-01-30T02:28:28.000Z</published>
+    <updated>2018-04-09T06:08:59.450Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h1><ul><li>安装完git第一步<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Daniel"</span></span><br><span class="line"></span><br><span class="line">git config --global user.email <span class="string">"dan.mike@xyz.com"</span></span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><ul><li>添加完用户信息之后通过运行下边命令,检查这些信息是否更新成功<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config  --list</span><br></pre></td></tr></table></figure></li></ul><h1 id="GIT命令"><a href="#GIT命令" class="headerlink" title="GIT命令"></a>GIT命令</h1><ul><li><p>建立一个新的仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li><li><p>查找一个仓库</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git grep <span class="string">"repository"</span></span><br></pre></td></tr></table></figure><ul><li>与远程仓库连接</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:sjzlai/lar.git</span><br></pre></td></tr></table></figure><ul><li><p>然后检查所有配置的远程服务器，运行如下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure><h1 id="克隆一个仓库"><a href="#克隆一个仓库" class="headerlink" title="克隆一个仓库"></a>克隆一个仓库</h1></li></ul><p>为了从本地服务器克隆一个仓库，运行如下代码：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> repository_path</span><br></pre></td></tr></table></figure><ul><li>如果我们想克隆远程服务器上的一个仓库，那克隆这个仓库的命令是：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> repository_path</span><br></pre></td></tr></table></figure></li></ul><h1 id="在仓库中列出分支"><a href="#在仓库中列出分支" class="headerlink" title="在仓库中列出分支"></a>在仓库中列出分支</h1><ul><li>为了检查所有可用的和当前工作的分支列表，执行：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure></li></ul><h1 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b <span class="string">'branchname'</span></span><br></pre></td></tr></table></figure><h1 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h1><ul><li><p>为了删除一个分支,执行:</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> branch -d <span class="string">'branchname'</span></span><br></pre></td></tr></table></figure></li><li><p>为了删除远程仓库的一个分支,执行:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin:<span class="string">'branchname'</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="切换到另一个分支"><a href="#切换到另一个分支" class="headerlink" title="切换到另一个分支"></a>切换到另一个分支</h1><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> checkout <span class="string">'branchname'</span></span><br></pre></td></tr></table></figure><h1 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h1><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> filename</span></span><br></pre></td></tr></table></figure><h1 id="文件状态"><a href="#文件状态" class="headerlink" title="文件状态"></a>文件状态</h1><ul><li>检查文件状态 (那些将要提交或者添加的文件)，执行：<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git status</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="提交变更"><a href="#提交变更" class="headerlink" title="提交变更"></a>提交变更</h1><ul><li><p>在我们添加一个文件或者对一个文件作出变更之后，我们通过运行下面命令来提交代码：</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git commit -a</span></span><br></pre></td></tr></table></figure></li><li><p>提交变更到head但不提交到远程仓库,命令是:</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">'message'</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="推送变更"><a href="#推送变更" class="headerlink" title="推送变更"></a>推送变更</h1><ul><li>推送对该仓库master分支所做的变更<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure></li></ul><h1 id="推送分支仓库"><a href="#推送分支仓库" class="headerlink" title="推送分支仓库"></a>推送分支仓库</h1><ul><li>推送对该仓库 master 分支所做的变更，运行：<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure></li></ul><h1 id="推送分支到仓库"><a href="#推送分支到仓库" class="headerlink" title="推送分支到仓库"></a>推送分支到仓库</h1><ul><li>推送对单一分支做出的变更到远程仓库</li></ul><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">push</span> origin <span class="string">'branchname'</span></span><br></pre></td></tr></table></figure><ul><li>推送所有分支到远程仓库<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> -all <span class="built_in">origin</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="合并两个分支"><a href="#合并两个分支" class="headerlink" title="合并两个分支"></a>合并两个分支</h1><ul><li>合并另一个分支到当前活动分支<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge <span class="string">'branchname'</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="从远程服务器合并到本地服务器"><a href="#从远程服务器合并到本地服务器" class="headerlink" title="从远程服务器合并到本地服务器"></a>从远程服务器合并到本地服务器</h1><ul><li>从远端服务器下载/拉取变更到本地服务器的工作目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure></li></ul><h1 id="检查合并冲突"><a href="#检查合并冲突" class="headerlink" title="检查合并冲突"></a>检查合并冲突</h1><ul><li>查看对库文件的合并冲突</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff -base <span class="string">'filename'</span></span><br></pre></td></tr></table></figure><ul><li><p>查看所有冲突,运行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></table></figure></li><li><p>如果我们在合并之前想预览所有变更,运行:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff <span class="string">'source-branch'</span> <span class="string">'target-barnch'</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="创建标记"><a href="#创建标记" class="headerlink" title="创建标记"></a>创建标记</h1><ul><li><p>创建标记来标志任一重要的变更,运行:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag <span class="string">'tag number'</span> <span class="string">'commit id'</span></span><br></pre></td></tr></table></figure></li><li><p>通过以下命令,我们可以查找commit id</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure></li></ul><h1 id="推送标记"><a href="#推送标记" class="headerlink" title="推送标记"></a>推送标记</h1><ul><li>推送所有创建的标记到远端服务器<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -tags origin</span><br></pre></td></tr></table></figure></li></ul><h1 id="恢复做出的变更"><a href="#恢复做出的变更" class="headerlink" title="恢复做出的变更"></a>恢复做出的变更</h1><ul><li><p>如果我们想用head中最后一次变更来替换对当前工作树的变更</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="string">'filename'</span></span><br></pre></td></tr></table></figure></li><li><p>我们也可以从远端服务器获取最新的历史,并且将它指向本地藏可得master分支,而不是丢弃所有本地所作所有变更,</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line"></span><br><span class="line">git reset -hard master</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;设置用户信息&quot;&gt;&lt;a href=&quot;#设置用户信息&quot; class=&quot;headerlink&quot; title=&quot;设置用户信息&quot;&gt;&lt;/a&gt;设置用户信息&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;安装完git第一步&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &lt;span class=&quot;string&quot;&gt;&quot;Daniel&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &lt;span class=&quot;string&quot;&gt;&quot;dan.mike@xyz.com&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://blog.56chzh.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>laravel时间戳</title>
+    <link href="http://blog.56chzh.com/2018/01/26/laravel%E6%97%B6%E9%97%B4%E6%88%B3/"/>
+    <id>http://blog.56chzh.com/2018/01/26/laravel时间戳/</id>
+    <published>2018-01-26T08:39:50.000Z</published>
+    <updated>2018-04-09T06:08:59.451Z</updated>
+    
+    <content type="html"><![CDATA[<p>在数据表中创建时添加create_at、和update_at两个字段</p><ul><li>在添加数据时,model方法中开启自动维护</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public <span class="variable">$timestamps</span> = <span class="literal">true</span>;</span><br><span class="line">//存储时使用时间戳形式</span><br><span class="line">protected <span class="keyword">function</span> getDateFormat()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">return</span> time();</span><br><span class="line">    &#125;</span><br><span class="line">//查询时返回时间戳形式</span><br><span class="line">protected <span class="keyword">function</span> asDateTime(<span class="variable">$val</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$val</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在数据表中创建时添加create_at、和update_at两个字段&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在添加数据时,model方法中开启自动维护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
+      
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+      <category term="时间戳" scheme="http://blog.56chzh.com/tags/%E6%97%B6%E9%97%B4%E6%88%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>laravel下载和安装</title>
+    <link href="http://blog.56chzh.com/2018/01/25/laravel%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/"/>
+    <id>http://blog.56chzh.com/2018/01/25/laravel下载和安装/</id>
+    <published>2018-01-25T09:12:56.000Z</published>
+    <updated>2018-04-09T06:08:59.451Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="composer-的下载及安装"><a href="#composer-的下载及安装" class="headerlink" title=" composer 的下载及安装"></a> composer 的下载及安装</h1><p>链接:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>选择Comeposer-Setup.exe</p><a id="more"></a><ul><li>下载完成后,直接双击安装至完成</li></ul><h1 id="使用composer下载安装laravel"><a href="#使用composer下载安装laravel" class="headerlink" title=" 使用composer下载安装laravel"></a> 使用composer下载安装laravel</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project laravel/laravel=5.2.* --prefer-dist</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;composer-的下载及安装&quot;&gt;&lt;a href=&quot;#composer-的下载及安装&quot; class=&quot;headerlink&quot; title=&quot; composer 的下载及安装&quot;&gt;&lt;/a&gt; composer 的下载及安装&lt;/h1&gt;&lt;p&gt;链接:&lt;a href=&quot;https://getcomposer.org/download/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://getcomposer.org/download/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择Comeposer-Setup.exe&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git遇到的问题</title>
+    <link href="http://blog.56chzh.com/2018/01/24/git%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://blog.56chzh.com/2018/01/24/git遇到的问题/</id>
+    <published>2018-01-24T12:48:03.000Z</published>
+    <updated>2018-04-09T06:08:59.450Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git遇到的问题"><a href="#git遇到的问题" class="headerlink" title="git遇到的问题"></a>git遇到的问题</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“Please make sure you have the correct access rights and the repository exists.”</span><br></pre></td></tr></table></figure><a id="more"></a><p>1、首先我得重新在git设置一下身份的名字和邮箱（因为当初都忘了设置啥了，因为遇到坑了）进入到需要提交的文件夹底下（因为直接打开git Bash，在没有路径的情况下，根本没！法！改！刚使用git时遇到的坑。。。）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br><span class="line">git config --global user.email“your@email.com<span class="string">"</span></span><br></pre></td></tr></table></figure></p><ul><li>注:yourname是你要设置的名字，your@email是你要设置的邮箱。</li></ul><h1 id="2、删除-ssh文件夹（直接搜索该文件夹）下的known-hosts-手动删除即可，不需要git）"><a href="#2、删除-ssh文件夹（直接搜索该文件夹）下的known-hosts-手动删除即可，不需要git）" class="headerlink" title="2、删除.ssh文件夹（直接搜索该文件夹）下的known_hosts(手动删除即可，不需要git）"></a>2、删除.ssh文件夹（直接搜索该文件夹）下的known_hosts(手动删除即可，不需要git）</h1><h1 id="3、git输入命令"><a href="#3、git输入命令" class="headerlink" title="3、git输入命令"></a>3、git输入命令</h1><ul><li>$ ssh-keygen -t rsa -C “your@email.com”（请填你设置的邮箱地址）</li></ul><h1 id="接着出现："><a href="#接着出现：" class="headerlink" title="接着出现："></a>接着出现：</h1><ul><li>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</li></ul><h1 id="请直接按下回车"><a href="#请直接按下回车" class="headerlink" title="请直接按下回车"></a>请直接按下回车</h1><ul><li><p>然后系统会自动在.ssh文件夹下生成两个文件，id_rsa和id_rsa.pub，用记事本打开id_rsa.pub</p></li><li><p>将全部的内容复制</p></li></ul><h1 id="4、打开https-github-com-，"><a href="#4、打开https-github-com-，" class="headerlink" title="4、打开https://github.com/，"></a>4、打开<a href="https://github.com/，" target="_blank" rel="noopener">https://github.com/，</a></h1><ul><li><p>登陆你的账户，进入设置进入ssh设置</p></li><li><p>在key中将刚刚复制的粘贴进去</p></li><li><p>点击add ssh key，</p></li></ul><h1 id="ok！设置成功"><a href="#ok！设置成功" class="headerlink" title="ok！设置成功"></a>ok！设置成功</h1><h1 id="5、在git中输入命令："><a href="#5、在git中输入命令：" class="headerlink" title="5、在git中输入命令："></a>5、在git中输入命令：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>然后会跳出一堆话。。</p><h1 id="输入命令：yes"><a href="#输入命令：yes" class="headerlink" title="输入命令：yes"></a>输入命令：yes</h1><p>回车</p><p>然后就会提示你成功了~~</p><h1 id="错误提示：fatal-remote-origin-already-exists"><a href="#错误提示：fatal-remote-origin-already-exists" class="headerlink" title="错误提示：fatal: remote origin already exists."></a>错误提示：fatal: remote origin already exists.</h1><blockquote><p>如果输入$ git remote add origin git@github.com:djqiang（github帐号名）/gitdemo（项目名）.git<br>提示出错信息：fatal: remote origin already exists.</p></blockquote><ul><li><p>解决办法如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">先输入$ git remote rm origin</span><br><span class="line">再输入$ git remote add origin git@github.com:djqiang（github帐号名）/gitdemo（项目名）.git</span><br></pre></td></tr></table></figure></li><li><p>如果还继续报错:error: Could not remove config section ‘remote.origin’</p><blockquote><p>就需要修改gitconfit文件的内容</p></blockquote></li><li><p>找到你的github的安装路径例:C:\Users\ASUS\AppData\Local\GitHub\PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8\etc</p></li><li><p>找到一个名为gitconfig的文件,打开它里边的[remote “origin”] 那行删除即可!!!</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;git遇到的问题&quot;&gt;&lt;a href=&quot;#git遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;git遇到的问题&quot;&gt;&lt;/a&gt;git遇到的问题&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;“Please make sure you have the correct access rights and the repository exists.”&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://blog.56chzh.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>laravel路由重写丶密钥更改与了解路由</title>
+    <link href="http://blog.56chzh.com/2018/01/24/laravel%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%E5%92%8C%E6%94%B9%E5%AF%86%E9%92%A5%E4%B8%8E%E4%BA%86%E8%A7%A3%E8%B7%AF%E7%94%B1/"/>
+    <id>http://blog.56chzh.com/2018/01/24/laravel路由重写和改密钥与了解路由/</id>
+    <published>2018-01-24T11:44:39.000Z</published>
+    <updated>2018-04-09T06:08:59.452Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>配置重写规则 :URL Rewrite, 引入public目录下,将’.htaccess’导入即可</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">localtion &#123;</span><br><span class="line">    try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query_string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><ul><li>更换.env文件内的key 密钥</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan key:generate</span><br></pre></td></tr></table></figure><h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p>简介:简单的说解释将用户的请求转发给相应的程序进行处理</p><ol><li>基本路由</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Rout::get(<span class="string">'basic1'</span>,<span class="function"><span class="title">function</span></span> ()&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'hello world'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Rout::post(<span class="string">'basic2'</span>,<span class="function"><span class="title">function</span></span> ()&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'basic2'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol><li>多请求路由</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Route::match([<span class="string">'get'</span>,<span class="string">'post'</span>],<span class="string">'multy1'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'multy1'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Route::any(<span class="string">'multy2'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'multy2'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol><li><p>路由参数</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Route::get(<span class="string">'user/&#123;id&#125;'</span>,<span class="keyword">function</span>(<span class="variable">$id</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'user-'</span>.<span class="variable">$id</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Route::get(<span class="string">'user/&#123;name?&#125;'</span>,<span class="keyword">function</span>(<span class="variable">$name</span> = null)&#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="string">'user-'</span>.<span class="variable">$name</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">Route::get(<span class="string">'user/&#123;name?&#125;'</span>,<span class="keyword">function</span>(<span class="variable">$name</span> = <span class="string">'张三'</span>)&#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="string">'user-'</span>.<span class="variable">$name</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">Route::get(<span class="string">'user/&#123;name?&#125;'</span>,<span class="keyword">function</span>(<span class="variable">$name</span> = null)&#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="string">'user-'</span>.<span class="variable">$name</span>;</span><br><span class="line">    &#125;)-&gt;<span class="built_in">where</span>(<span class="string">'name'</span>,<span class="string">'[A-Za-z]+'</span>);</span><br></pre></td></tr></table></figure></li><li><p>路由别名</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Route::get(<span class="string">'user/member-center'</span>,[<span class="string">'as'</span>=&gt;<span class="string">'center'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'member-center'</span>;</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure><ol><li>路由群组</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Route::group([<span class="string">'prefix'</span>=&gt;<span class="string">'member'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">     Route::get(<span class="string">'user/member-center'</span>,[<span class="string">'as'</span>=&gt;<span class="string">'center'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="string">'member-center'</span>;</span><br><span class="line">        &#125;]);</span><br><span class="line"></span><br><span class="line">      Route::match([<span class="string">'get'</span>,<span class="string">'post'</span>],<span class="string">'multy1'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">             <span class="built_in">return</span> <span class="string">'multy1'</span>;</span><br><span class="line">         &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure><ol><li>路由中输出视图</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Rout::get(<span class="string">'basic1'</span>,<span class="function"><span class="title">function</span></span> ()&#123;</span><br><span class="line">    <span class="built_in">return</span> view(<span class="string">'welcome'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;配置重写规则 :URL Rewrite, 引入public目录下,将’.htaccess’导入即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;localtion &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    try_files &lt;span class=&quot;variable&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$uri&lt;/span&gt;/ /index.php?&lt;span class=&quot;variable&quot;&gt;$query_string&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux中修改nginx配置</title>
+    <link href="http://blog.56chzh.com/2018/01/24/linux%E4%B8%ADnginx/"/>
+    <id>http://blog.56chzh.com/2018/01/24/linux中nginx/</id>
+    <published>2018-01-24T11:34:34.000Z</published>
+    <updated>2018-04-09T06:08:59.452Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="在linux服务其中如何安装lnmp环境"><a href="#在linux服务其中如何安装lnmp环境" class="headerlink" title="在linux服务其中如何安装lnmp环境"></a>在linux服务其中如何安装lnmp环境</h1><ol><li>在链接<a href="https://lnmp.org/install.html" target="_blank" rel="noopener">https://lnmp.org/install.html</a> 中安装最新稳定版本</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; <span class="built_in">cd</span> lnmp1.4 &amp;&amp; ./install.sh lnmp</span><br></pre></td></tr></table></figure><a id="more"></a><ul><li>具体可参考 <a href="https://lnmp.org/install.html" target="_blank" rel="noopener">https://lnmp.org/install.html</a></li></ul><ol><li>在linux项目中使用lnmp命令创建项目后存在 .user.ini 文件使用命令修改并删除</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chattr -i .user.ini</span><br><span class="line">rm -rf .user.ini</span><br></pre></td></tr></table></figure><h4 id="修改-usr-local-nginx-conf-other-conf"><a href="#修改-usr-local-nginx-conf-other-conf" class="headerlink" title="修改/usr/local/nginx/conf/other.conf"></a>修改/usr/local/nginx/conf/other.conf</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (  !-f  <span class="variable">$request_filename</span>  )  &#123;</span><br><span class="line">rewrite  ^/(.*)$  /index.php last;<span class="comment">#rewrite</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="修改-usr-local-nginx-conf-fastcgi-conf"><a href="#修改-usr-local-nginx-conf-fastcgi-conf" class="headerlink" title="修改/usr/local/nginx/conf/fastcgi.conf"></a>修改/usr/local/nginx/conf/fastcgi.conf</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/:/tmp/:/proc/";</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;在linux服务其中如何安装lnmp环境&quot;&gt;&lt;a href=&quot;#在linux服务其中如何安装lnmp环境&quot; class=&quot;headerlink&quot; title=&quot;在linux服务其中如何安装lnmp环境&quot;&gt;&lt;/a&gt;在linux服务其中如何安装lnmp环境&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;在链接&lt;a href=&quot;https://lnmp.org/install.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://lnmp.org/install.html&lt;/a&gt; 中安装最新稳定版本&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.4.tar.gz &amp;amp;&amp;amp; &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; lnmp1.4 &amp;amp;&amp;amp; ./install.sh lnmp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="nginx" scheme="http://blog.56chzh.com/tags/nginx/"/>
+    
+  </entry>
+  
+</feed>

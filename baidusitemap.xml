@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/04/20/%E5%BC%80%E5%8F%91laravel%E6%89%A9%E5%B1%95/</loc>
+    <lastmod>2018-04-24T06:20:06.732Z</lastmod>
+    <data>
+        <display>
+        <title>添加laravel验证码</title>
+        <pubTime>2018-04-20T06:35:20.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>laravel扩展</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/04/09/hexo-commandnotfound/</loc>
+    <lastmod>2018-04-24T06:13:51.404Z</lastmod>
+    <data>
+        <display>
+        <title>hexo: command not found</title>
+        <pubTime>2018-04-09T06:19:34.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/03/01/%E4%BD%BF%E7%94%A8Nginx%E5%AF%B9Laravel%E8%BF%9B%E8%A1%8C%E8%B4%9F%E8%BD%BD/</loc>
+    <lastmod>2018-04-09T06:08:59.454Z</lastmod>
+    <data>
+        <display>
+        <title>使用Nginx对Laravel进行负载</title>
+        <pubTime>2018-03-01T08:34:58.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/24/study/</loc>
+    <lastmod>2018-04-09T06:08:59.453Z</lastmod>
+    <data>
+        <display>
+        <title>一般商城项目所需要的功能</title>
+        <pubTime>2018-01-24T11:12:47.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>laravel</tag>
+         
+        <tag>composer</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/02/09/%E4%B8%BAlnmp%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8BPHP%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85fileinfo%E6%89%A9%E5%B1%95/</loc>
+    <lastmod>2018-04-09T06:08:59.453Z</lastmod>
+    <data>
+        <display>
+        <title>为lnmp一键安装包下PHP编译安装fileinfo扩展</title>
+        <pubTime>2018-02-09T04:04:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>lnmp</tag>
+         
+        <tag>fileinfo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/30/lnmp%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9/</loc>
+    <lastmod>2018-04-09T06:08:59.453Z</lastmod>
+    <data>
+        <display>
+        <title>lnmp配置修改</title>
+        <pubTime>2018-01-30T04:00:42.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>lnmp</tag>
+         
+        <tag>rewrite</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/24/mysql%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</loc>
+    <lastmod>2018-04-09T06:08:59.453Z</lastmod>
+    <data>
+        <display>
+        <title>mysql远程登录</title>
+        <pubTime>2018-01-24T08:41:30.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/24/linux%E4%B8%ADnginx/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>linux中修改nginx配置</title>
+        <pubTime>2018-01-24T11:34:34.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>nginx</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/03/05/lnmp%E6%94%AF%E6%8C%81thinkphp%E7%9A%84rewrite%E8%A7%84%E5%88%99/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>lnmp支持thinkphp的rewrite规则</title>
+        <pubTime>2018-03-05T06:38:14.000Z</pubTime>
+        
+        <tag>lnmp</tag>
+         
+        <tag>rewrite</tag>
+         
+        <tag>thinkphp</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/02/06/linux%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BDnodejs/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>linux安装卸载nodejs</title>
+        <pubTime>2018-02-06T01:30:21.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>nodejs</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/02/02/linux%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>linux命令</title>
+        <pubTime>2018-02-02T03:21:43.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>find</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/31/laravel%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>laravel项目报错</title>
+        <pubTime>2018-01-31T03:41:47.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>302</tag>
+         
+        <tag>withErrors</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/24/laravel%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%E5%92%8C%E6%94%B9%E5%AF%86%E9%92%A5%E4%B8%8E%E4%BA%86%E8%A7%A3%E8%B7%AF%E7%94%B1/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>laravel路由重写丶密钥更改与了解路由</title>
+        <pubTime>2018-01-24T11:44:39.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/25/laravel%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+    <data>
+        <display>
+        <title>laravel下载和安装</title>
+        <pubTime>2018-01-25T09:12:56.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/26/laravel%E6%97%B6%E9%97%B4%E6%88%B3/</loc>
+    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+    <data>
+        <display>
+        <title>laravel时间戳</title>
+        <pubTime>2018-01-26T08:39:50.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>时间戳</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/03/27/laravel%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+    <data>
+        <display>
+        <title>laravel模板继承</title>
+        <pubTime>2018-03-27T01:31:49.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/24/laravel%E5%9C%A8nginx%E6%8A%A5500%E9%94%99%E8%AF%AF/</loc>
+    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+    <data>
+        <display>
+        <title>laravel在nginx报500错误</title>
+        <pubTime>2018-01-24T08:48:09.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>500错误</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/02/09/laravel%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+    <data>
+        <display>
+        <title>laravel解决跨域问题</title>
+        <pubTime>2018-02-09T07:35:20.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>跨域</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/23/hexo/</loc>
+    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+    <data>
+        <display>
+        <title>使用Hexo建立博客</title>
+        <pubTime>2018-01-23T02:24:17.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/24/git%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-04-09T06:08:59.450Z</lastmod>
+    <data>
+        <display>
+        <title>git遇到的问题</title>
+        <pubTime>2018-01-24T12:48:03.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/20/git/</loc>
+    <lastmod>2018-04-09T06:08:59.450Z</lastmod>
+    <data>
+        <display>
+        <title>在阿里云服务器上创建git远程仓库</title>
+        <pubTime>2018-01-20T10:54:49.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/30/git%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2018-04-09T06:08:59.450Z</lastmod>
+    <data>
+        <display>
+        <title>git命令指南</title>
+        <pubTime>2018-01-30T02:28:28.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/02/26/ajax%E5%B0%8F%E7%BB%93/</loc>
+    <lastmod>2018-04-09T06:08:59.450Z</lastmod>
+    <data>
+        <display>
+        <title>ajax小结</title>
+        <pubTime>2018-02-26T06:38:15.000Z</pubTime>
+        
+        <tag>ajax</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/03/01/Laravel%E4%BD%BF%E7%94%A8Redis%E5%85%B1%E4%BA%ABSession/</loc>
+    <lastmod>2018-04-09T06:08:59.449Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel使用Redis共享Session</title>
+        <pubTime>2018-03-01T08:45:06.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>redis</tag>
+         
+        <tag>session</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/02/22/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2018-04-09T06:08:59.449Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo博客部署到个人服务器</title>
+        <pubTime>2018-02-22T01:28:20.000Z</pubTime>
+        
+        <tag>阿里云</tag>
+         
+        <tag>git</tag>
+         
+        <tag>hexo</tag>
+         
+        <tag>github</tag>
+         
+        <tag>hooks</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>
