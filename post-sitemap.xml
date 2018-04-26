@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://blog.56chzh.com/2018/04/26/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4%E8%AF%A6%E8%BF%B0/</loc>
+        <lastmod>2018-04-26T08:31:21.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://blog.56chzh.com/2018/04/20/%E5%BC%80%E5%8F%91laravel%E6%89%A9%E5%B1%95/</loc>
         <lastmod>2018-04-24T06:20:06.732Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,14 +39,6 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/2018/01/24/mysql%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</loc>
-        <lastmod>2018-04-09T06:08:59.453Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://blog.56chzh.com/2018/01/30/lnmp%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9/</loc>
         <lastmod>2018-04-09T06:08:59.453Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -47,7 +47,7 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/2018/02/09/%E4%B8%BAlnmp%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8BPHP%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85fileinfo%E6%89%A9%E5%B1%95/</loc>
+        <loc>http://blog.56chzh.com/2018/01/24/mysql%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</loc>
         <lastmod>2018-04-09T06:08:59.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -56,6 +56,14 @@
 
     <url>
         <loc>http://blog.56chzh.com/2018/01/24/study/</loc>
+        <lastmod>2018-04-09T06:08:59.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/2018/02/09/%E4%B8%BAlnmp%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8BPHP%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85fileinfo%E6%89%A9%E5%B1%95/</loc>
         <lastmod>2018-04-09T06:08:59.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -87,7 +95,7 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/2018/02/02/linux%E5%91%BD%E4%BB%A4/</loc>
+        <loc>http://blog.56chzh.com/2018/02/06/linux%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BDnodejs/</loc>
         <lastmod>2018-04-09T06:08:59.452Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -95,7 +103,7 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/2018/02/06/linux%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BDnodejs/</loc>
+        <loc>http://blog.56chzh.com/2018/02/02/linux%E5%91%BD%E4%BB%A4/</loc>
         <lastmod>2018-04-09T06:08:59.452Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -111,31 +119,7 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/2018/01/23/hexo/</loc>
-        <lastmod>2018-04-09T06:08:59.451Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://blog.56chzh.com/2018/01/25/laravel%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/</loc>
-        <lastmod>2018-04-09T06:08:59.451Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://blog.56chzh.com/2018/01/24/laravel%E5%9C%A8nginx%E6%8A%A5500%E9%94%99%E8%AF%AF/</loc>
-        <lastmod>2018-04-09T06:08:59.451Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://blog.56chzh.com/2018/03/27/laravel%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF/</loc>
         <lastmod>2018-04-09T06:08:59.451Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -151,7 +135,31 @@
     </url>
 
     <url>
+        <loc>http://blog.56chzh.com/2018/01/23/hexo/</loc>
+        <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/2018/03/27/laravel%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF/</loc>
+        <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://blog.56chzh.com/2018/02/09/laravel%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</loc>
+        <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/2018/01/24/laravel%E5%9C%A8nginx%E6%8A%A5500%E9%94%99%E8%AF%AF/</loc>
         <lastmod>2018-04-09T06:08:59.451Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -167,7 +175,7 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/2018/01/30/git%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/</loc>
+        <loc>http://blog.56chzh.com/2018/01/20/git/</loc>
         <lastmod>2018-04-09T06:08:59.450Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -175,7 +183,7 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/2018/01/20/git/</loc>
+        <loc>http://blog.56chzh.com/2018/01/30/git%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/</loc>
         <lastmod>2018-04-09T06:08:59.450Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

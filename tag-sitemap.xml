@@ -44,13 +44,6 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/500%E9%94%99%E8%AF%AF/</loc>
-        <lastmod>2018-04-09T06:08:59.451Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://blog.56chzh.com/tags/%E6%97%B6%E9%97%B4%E6%88%B3/</loc>
         <lastmod>2018-04-09T06:08:59.451Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -59,6 +52,13 @@
 
     <url>
         <loc>http://blog.56chzh.com/tags/%E8%B7%A8%E5%9F%9F/</loc>
+        <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/tags/500%E9%94%99%E8%AF%AF/</loc>
         <lastmod>2018-04-09T06:08:59.451Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -86,14 +86,14 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/find/</loc>
+        <loc>http://blog.56chzh.com/tags/nodejs/</loc>
         <lastmod>2018-04-09T06:08:59.452Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/nodejs/</loc>
+        <loc>http://blog.56chzh.com/tags/find/</loc>
         <lastmod>2018-04-09T06:08:59.452Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -108,13 +108,6 @@
 
     <url>
         <loc>http://blog.56chzh.com/tags/git/</loc>
-        <lastmod>2018-04-09T06:08:59.453Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://blog.56chzh.com/tags/linux/</loc>
         <lastmod>2018-04-09T06:08:59.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -142,14 +135,14 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/fileinfo/</loc>
+        <loc>http://blog.56chzh.com/tags/composer/</loc>
         <lastmod>2018-04-09T06:08:59.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/composer/</loc>
+        <loc>http://blog.56chzh.com/tags/fileinfo/</loc>
         <lastmod>2018-04-09T06:08:59.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -179,6 +172,20 @@
     <url>
         <loc>http://blog.56chzh.com/tags/laravel%E6%89%A9%E5%B1%95/</loc>
         <lastmod>2018-04-24T06:20:06.732Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/tags/linux/</loc>
+        <lastmod>2018-04-26T08:31:21.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/tags/java/</loc>
+        <lastmod>2018-04-26T08:31:21.651Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

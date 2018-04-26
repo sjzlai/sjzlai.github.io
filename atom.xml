@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.56chzh.com/"/>
-  <updated>2018-04-24T06:20:06.732Z</updated>
+  <updated>2018-04-26T08:31:21.651Z</updated>
   <id>http://blog.56chzh.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux下安装Java环境配置步骤详述</title>
+    <link href="http://blog.56chzh.com/2018/04/26/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4%E8%AF%A6%E8%BF%B0/"/>
+    <id>http://blog.56chzh.com/2018/04/26/Linux下安装Java环境配置步骤详述/</id>
+    <published>2018-04-26T08:12:53.000Z</published>
+    <updated>2018-04-26T08:31:21.651Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-下载jsk8"><a href="#1-下载jsk8" class="headerlink" title="1. 下载jsk8"></a>1. 下载jsk8</h3><p>登陆网址:![]<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p><p>选择对应jdk版本下载.(Tips: 可在Windows下载完成后,通过FTP 或SSH发送到Linux)</p><h3 id="2-登陆Linux-切换到root用户"><a href="#2-登陆Linux-切换到root用户" class="headerlink" title="2. 登陆Linux,切换到root用户"></a>2. 登陆Linux,切换到root用户</h3><p>su root 获取root用户权限,当前工作目录不变(需要root密码)</p><p>或者</p><p>sudo -i 不需要root密码直接切换成root（需要当前用户密码）</p><h3 id="3-在usr目录下建立java安装目录"><a href="#3-在usr目录下建立java安装目录" class="headerlink" title="3.在usr目录下建立java安装目录"></a>3.在usr目录下建立java安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr</span><br><span class="line"></span><br><span class="line">mkdir java</span><br></pre></td></tr></table></figure><h3 id="4-将jdk-8u60-linux-x64-tar-gz拷贝到java目录下"><a href="#4-将jdk-8u60-linux-x64-tar-gz拷贝到java目录下" class="headerlink" title="4. 将jdk-8u60-linux-x64.tar.gz拷贝到java目录下"></a>4. 将jdk-8u60-linux-x64.tar.gz拷贝到java目录下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /mnt/hgfs/linux/jdk-8u60-linux-x64.tar.gz /usr/java/</span><br></pre></td></tr></table></figure><h3 id="5-解压jdk到当前目录-得到文件夹-jdk1-8-0-注意：下载不同版本的JDK目录名不同！"><a href="#5-解压jdk到当前目录-得到文件夹-jdk1-8-0-注意：下载不同版本的JDK目录名不同！" class="headerlink" title="5.解压jdk到当前目录,得到文件夹 jdk1.8.0_*(注意：下载不同版本的JDK目录名不同！)"></a>5.解压jdk到当前目录,得到文件夹 jdk1.8.0_*(注意：下载不同版本的JDK目录名不同！)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u60-linux-x64.tar.gz</span><br></pre></td></tr></table></figure><h3 id="6-安装完毕为他建立一个链接以节省目录长度"><a href="#6-安装完毕为他建立一个链接以节省目录长度" class="headerlink" title="6.安装完毕为他建立一个链接以节省目录长度"></a>6.安装完毕为他建立一个链接以节省目录长度</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/java/jdk1.8.0_60/ /usr/jdk</span><br></pre></td></tr></table></figure><h3 id="7-编辑配置文件，配置环境变量"><a href="#7-编辑配置文件，配置环境变量" class="headerlink" title="7.编辑配置文件，配置环境变量"></a>7.编辑配置文件，配置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure><p>在文本的末尾添加如下内容：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/usr/jdk</span><br><span class="line"></span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/</span><br><span class="line"></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH JAVA_HOME CLASSPATH</span><br></pre></td></tr></table></figure><h3 id="8-重启机器或执行命令"><a href="#8-重启机器或执行命令" class="headerlink" title="8.重启机器或执行命令:"></a>8.重启机器或执行命令:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"></span><br><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure><h3 id="9-查看安装情况"><a href="#9-查看安装情况" class="headerlink" title="9.查看安装情况"></a>9.查看安装情况</h3><blockquote><p>java -version</p></blockquote><p>java version “1.8.0_60”</p><p>Java(TM) SE Runtime Environment (build 1.8.0_60-b27)</p><p>Java HotSpot(TM) Client VM (build 25.60-b23, mixed mode)</p><p>PS:可能出现的错误信息:</p><p>bash:./java:cannot execute binary file</p><p>出现这个错误的原因可能是在32位的操作系统上安装了64位的jdk，</p><p>1、查看jdk版本和Linux版本位数是否一致。</p><p>2、查看你安装的Ubuntu是32位还是64位系统：</p><blockquote><p>sudo uname -m</p></blockquote><p>附Tips： i686    //表示是32位<br>         x86_64  // 表示是64位</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-下载jsk8&quot;&gt;&lt;a href=&quot;#1-下载jsk8&quot; class=&quot;headerlink&quot; title=&quot;1. 下载jsk8&quot;&gt;&lt;/a&gt;1. 下载jsk8&lt;/h3&gt;&lt;p&gt;登陆网址:![]&lt;a href=&quot;http://www.oracle.com/techn
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="java" scheme="http://blog.56chzh.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>添加laravel验证码</title>
@@ -487,31 +512,6 @@
     
     
       <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux中修改nginx配置</title>
-    <link href="http://blog.56chzh.com/2018/01/24/linux%E4%B8%ADnginx/"/>
-    <id>http://blog.56chzh.com/2018/01/24/linux中nginx/</id>
-    <published>2018-01-24T11:34:34.000Z</published>
-    <updated>2018-04-09T06:08:59.452Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="在linux服务其中如何安装lnmp环境"><a href="#在linux服务其中如何安装lnmp环境" class="headerlink" title="在linux服务其中如何安装lnmp环境"></a>在linux服务其中如何安装lnmp环境</h1><ol><li>在链接<a href="https://lnmp.org/install.html" target="_blank" rel="noopener">https://lnmp.org/install.html</a> 中安装最新稳定版本</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; <span class="built_in">cd</span> lnmp1.4 &amp;&amp; ./install.sh lnmp</span><br></pre></td></tr></table></figure><a id="more"></a><ul><li>具体可参考 <a href="https://lnmp.org/install.html" target="_blank" rel="noopener">https://lnmp.org/install.html</a></li></ul><ol><li>在linux项目中使用lnmp命令创建项目后存在 .user.ini 文件使用命令修改并删除</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chattr -i .user.ini</span><br><span class="line">rm -rf .user.ini</span><br></pre></td></tr></table></figure><h4 id="修改-usr-local-nginx-conf-other-conf"><a href="#修改-usr-local-nginx-conf-other-conf" class="headerlink" title="修改/usr/local/nginx/conf/other.conf"></a>修改/usr/local/nginx/conf/other.conf</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (  !-f  <span class="variable">$request_filename</span>  )  &#123;</span><br><span class="line">rewrite  ^/(.*)$  /index.php last;<span class="comment">#rewrite</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="修改-usr-local-nginx-conf-fastcgi-conf"><a href="#修改-usr-local-nginx-conf-fastcgi-conf" class="headerlink" title="修改/usr/local/nginx/conf/fastcgi.conf"></a>修改/usr/local/nginx/conf/fastcgi.conf</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/:/tmp/:/proc/";</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;在linux服务其中如何安装lnmp环境&quot;&gt;&lt;a href=&quot;#在linux服务其中如何安装lnmp环境&quot; class=&quot;headerlink&quot; title=&quot;在linux服务其中如何安装lnmp环境&quot;&gt;&lt;/a&gt;在linux服务其中如何安装lnmp环境&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;在链接&lt;a href=&quot;https://lnmp.org/install.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://lnmp.org/install.html&lt;/a&gt; 中安装最新稳定版本&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.4.tar.gz &amp;amp;&amp;amp; &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; lnmp1.4 &amp;amp;&amp;amp; ./install.sh lnmp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
-    
-      <category term="nginx" scheme="http://blog.56chzh.com/tags/nginx/"/>
     
   </entry>
   
