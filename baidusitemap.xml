@@ -4,8 +4,29 @@
 
     
   <url>
+    <loc>http://blog.56chzh.com/2018/04/27/PHP%E4%BC%98%E9%9B%85%E4%B8%8A%E7%BA%BF-Jenkins%E5%8F%AF%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2018-04-27T06:17:07.203Z</lastmod>
+    <data>
+        <display>
+        <title>PHP优雅上线--Jenkins可持续集成部署</title>
+        <pubTime>2018-04-27T03:24:44.000Z</pubTime>
+        
+        <tag>Jenkins</tag>
+         
+        <tag>linux</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.56chzh.com/2018/04/26/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4%E8%AF%A6%E8%BF%B0/</loc>
-    <lastmod>2018-04-26T08:31:21.651Z</lastmod>
+    <lastmod>2018-04-27T03:31:05.586Z</lastmod>
     <data>
         <display>
         <title>Linux下安装Java环境配置步骤详述</title>
@@ -120,23 +141,6 @@
 
     
   <url>
-    <loc>http://blog.56chzh.com/2018/01/24/mysql%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</loc>
-    <lastmod>2018-04-09T06:08:59.453Z</lastmod>
-    <data>
-        <display>
-        <title>mysql远程登录</title>
-        <pubTime>2018-01-24T08:41:30.000Z</pubTime>
-        
-        <tag>mysql</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.56chzh.com/2018/01/30/lnmp%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9/</loc>
     <lastmod>2018-04-09T06:08:59.453Z</lastmod>
     <data>
@@ -158,54 +162,14 @@
 
     
   <url>
-    <loc>http://blog.56chzh.com/2018/03/05/lnmp%E6%94%AF%E6%8C%81thinkphp%E7%9A%84rewrite%E8%A7%84%E5%88%99/</loc>
-    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <loc>http://blog.56chzh.com/2018/01/24/mysql%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</loc>
+    <lastmod>2018-04-09T06:08:59.453Z</lastmod>
     <data>
         <display>
-        <title>lnmp支持thinkphp的rewrite规则</title>
-        <pubTime>2018-03-05T06:38:14.000Z</pubTime>
+        <title>mysql远程登录</title>
+        <pubTime>2018-01-24T08:41:30.000Z</pubTime>
         
-        <tag>lnmp</tag>
-         
-        <tag>rewrite</tag>
-         
-        <tag>thinkphp</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.56chzh.com/2018/01/24/laravel%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%E5%92%8C%E6%94%B9%E5%AF%86%E9%92%A5%E4%B8%8E%E4%BA%86%E8%A7%A3%E8%B7%AF%E7%94%B1/</loc>
-    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
-    <data>
-        <display>
-        <title>laravel路由重写丶密钥更改与了解路由</title>
-        <pubTime>2018-01-24T11:44:39.000Z</pubTime>
-        
-        <tag>laravel</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.56chzh.com/2018/02/02/linux%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
-    <data>
-        <display>
-        <title>linux命令</title>
-        <pubTime>2018-02-02T03:21:43.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>find</tag>
+        <tag>mysql</tag>
          
          
            
@@ -255,6 +219,25 @@
 
     
   <url>
+    <loc>http://blog.56chzh.com/2018/02/02/linux%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>linux命令</title>
+        <pubTime>2018-02-02T03:21:43.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>find</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.56chzh.com/2018/01/24/linux%E4%B8%ADnginx/</loc>
     <lastmod>2018-04-09T06:08:59.452Z</lastmod>
     <data>
@@ -265,6 +248,44 @@
         <tag>linux</tag>
          
         <tag>nginx</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/03/05/lnmp%E6%94%AF%E6%8C%81thinkphp%E7%9A%84rewrite%E8%A7%84%E5%88%99/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>lnmp支持thinkphp的rewrite规则</title>
+        <pubTime>2018-03-05T06:38:14.000Z</pubTime>
+        
+        <tag>lnmp</tag>
+         
+        <tag>rewrite</tag>
+         
+        <tag>thinkphp</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/24/laravel%E8%B7%AF%E7%94%B1%E9%87%8D%E5%86%99%E5%92%8C%E6%94%B9%E5%AF%86%E9%92%A5%E4%B8%8E%E4%BA%86%E8%A7%A3%E8%B7%AF%E7%94%B1/</loc>
+    <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+    <data>
+        <display>
+        <title>laravel路由重写丶密钥更改与了解路由</title>
+        <pubTime>2018-01-24T11:44:39.000Z</pubTime>
+        
+        <tag>laravel</tag>
          
          
            
@@ -293,50 +314,12 @@
 
     
   <url>
-    <loc>http://blog.56chzh.com/2018/01/24/laravel%E5%9C%A8nginx%E6%8A%A5500%E9%94%99%E8%AF%AF/</loc>
+    <loc>http://blog.56chzh.com/2018/01/25/laravel%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2018-04-09T06:08:59.451Z</lastmod>
     <data>
         <display>
-        <title>laravel在nginx报500错误</title>
-        <pubTime>2018-01-24T08:48:09.000Z</pubTime>
-        
-        <tag>laravel</tag>
-         
-        <tag>500错误</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.56chzh.com/2018/02/09/laravel%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
-    <data>
-        <display>
-        <title>laravel解决跨域问题</title>
-        <pubTime>2018-02-09T07:35:20.000Z</pubTime>
-        
-        <tag>laravel</tag>
-         
-        <tag>跨域</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.56chzh.com/2018/03/27/laravel%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF/</loc>
-    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
-    <data>
-        <display>
-        <title>laravel模板继承</title>
-        <pubTime>2018-03-27T01:31:49.000Z</pubTime>
+        <title>laravel下载和安装</title>
+        <pubTime>2018-01-25T09:12:56.000Z</pubTime>
         
         <tag>laravel</tag>
          
@@ -365,14 +348,52 @@
 
     
   <url>
-    <loc>http://blog.56chzh.com/2018/01/25/laravel%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/</loc>
+    <loc>http://blog.56chzh.com/2018/03/27/laravel%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF/</loc>
     <lastmod>2018-04-09T06:08:59.451Z</lastmod>
     <data>
         <display>
-        <title>laravel下载和安装</title>
-        <pubTime>2018-01-25T09:12:56.000Z</pubTime>
+        <title>laravel模板继承</title>
+        <pubTime>2018-03-27T01:31:49.000Z</pubTime>
         
         <tag>laravel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/02/09/laravel%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+    <data>
+        <display>
+        <title>laravel解决跨域问题</title>
+        <pubTime>2018-02-09T07:35:20.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>跨域</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/01/24/laravel%E5%9C%A8nginx%E6%8A%A5500%E9%94%99%E8%AF%AF/</loc>
+    <lastmod>2018-04-09T06:08:59.451Z</lastmod>
+    <data>
+        <display>
+        <title>laravel在nginx报500错误</title>
+        <pubTime>2018-01-24T08:48:09.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>500错误</tag>
          
          
            
@@ -399,12 +420,12 @@
 
     
   <url>
-    <loc>http://blog.56chzh.com/2018/01/24/git%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <loc>http://blog.56chzh.com/2018/01/30/git%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2018-04-09T06:08:59.450Z</lastmod>
     <data>
         <display>
-        <title>git遇到的问题</title>
-        <pubTime>2018-01-24T12:48:03.000Z</pubTime>
+        <title>git命令指南</title>
+        <pubTime>2018-01-30T02:28:28.000Z</pubTime>
         
         <tag>git</tag>
          
@@ -416,12 +437,12 @@
 
     
   <url>
-    <loc>http://blog.56chzh.com/2018/01/30/git%E5%91%BD%E4%BB%A4%E6%8C%87%E5%8D%97/</loc>
+    <loc>http://blog.56chzh.com/2018/01/24/git%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2018-04-09T06:08:59.450Z</lastmod>
     <data>
         <display>
-        <title>git命令指南</title>
-        <pubTime>2018-01-30T02:28:28.000Z</pubTime>
+        <title>git遇到的问题</title>
+        <pubTime>2018-01-24T12:48:03.000Z</pubTime>
         
         <tag>git</tag>
          

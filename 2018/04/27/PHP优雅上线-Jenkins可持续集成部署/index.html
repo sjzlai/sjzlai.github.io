@@ -7,19 +7,21 @@
   
   
   
-  <title>laravel项目报错 | 七寸扇</title>
+  <title>PHP优雅上线--Jenkins可持续集成部署 | 七寸扇</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="laravel项目return back()-&amp;gt;withErrors($validator)或return back()-&amp;gt;with(‘errors’,’原密码错误！’)在前台原密码错误的情况下不能正确显示错误信息，变成报错！  执行: 1php artisan --version  查看版本,如果是5.2.26以上的,在路由文件routes.php删除web中间件分组">
-<meta name="keywords" content="laravel,302,withErrors">
+  <meta name="description" content="主要搭建Jenkins部署服务,让项目如何优雅上线 工具准备 Linux下JDK(java)环境 见上一篇!  {% post_link Linux下安装Java环境配置步骤详述  Linux下安装Java环境配置步骤详述%}  jenkins安装包,这里用rpm安装(安装方法很多种) 所有环境已上传到百度云:">
+<meta name="keywords" content="Jenkins,linux,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="laravel项目报错">
-<meta property="og:url" content="http://blog.56chzh.com/2018/01/31/laravel项目报错/index.html">
+<meta property="og:title" content="PHP优雅上线--Jenkins可持续集成部署">
+<meta property="og:url" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/index.html">
 <meta property="og:site_name" content="七寸扇">
-<meta property="og:description" content="laravel项目return back()-&amp;gt;withErrors($validator)或return back()-&amp;gt;with(‘errors’,’原密码错误！’)在前台原密码错误的情况下不能正确显示错误信息，变成报错！  执行: 1php artisan --version  查看版本,如果是5.2.26以上的,在路由文件routes.php删除web中间件分组">
-<meta property="og:updated_time" content="2018-04-09T06:08:59.452Z">
+<meta property="og:description" content="主要搭建Jenkins部署服务,让项目如何优雅上线 工具准备 Linux下JDK(java)环境 见上一篇!  {% post_link Linux下安装Java环境配置步骤详述  Linux下安装Java环境配置步骤详述%}  jenkins安装包,这里用rpm安装(安装方法很多种) 所有环境已上传到百度云:">
+<meta property="og:image" content="https://pan.baidu.com/s/1qFGDK-oKXcQ_-zMxJpJLdQ">
+<meta property="og:updated_time" content="2018-04-27T06:17:07.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel项目报错">
-<meta name="twitter:description" content="laravel项目return back()-&amp;gt;withErrors($validator)或return back()-&amp;gt;with(‘errors’,’原密码错误！’)在前台原密码错误的情况下不能正确显示错误信息，变成报错！  执行: 1php artisan --version  查看版本,如果是5.2.26以上的,在路由文件routes.php删除web中间件分组">
+<meta name="twitter:title" content="PHP优雅上线--Jenkins可持续集成部署">
+<meta name="twitter:description" content="主要搭建Jenkins部署服务,让项目如何优雅上线 工具准备 Linux下JDK(java)环境 见上一篇!  {% post_link Linux下安装Java环境配置步骤详述  Linux下安装Java环境配置步骤详述%}  jenkins安装包,这里用rpm安装(安装方法很多种) 所有环境已上传到百度云:">
+<meta name="twitter:image" content="https://pan.baidu.com/s/1qFGDK-oKXcQ_-zMxJpJLdQ">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -244,11 +246,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-laravel项目报错" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-PHP优雅上线-Jenkins可持续集成部署" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/01/31/laravel项目报错/" class="article-date">
-      <time datetime="2018-01-31T03:41:47.000Z" itemprop="datePublished">2018-01-31</time>
+      <a  href="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/" class="article-date">
+      <time datetime="2018-04-27T03:24:44.000Z" itemprop="datePublished">2018-04-27</time>
 </a>
 
     </div>
@@ -262,7 +264,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      laravel项目报错
+      PHP优雅上线--Jenkins可持续集成部署
     </h1>
   
 
@@ -274,7 +276,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/302/">302</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel/">laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/withErrors/">withErrors</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jenkins/">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -284,24 +286,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ul>
-<li><p>laravel项目return back()-&gt;withErrors($validator)或return back()-&gt;with(‘errors’,’原密码错误！’)在前台原密码错误的情况下不能正确显示错误信息，变成报错！</p>
-</li>
-<li><p>执行:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan --version</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看版本,如果是5.2.26以上的,在路由文件routes.php删除web中间件分组</p>
-</li>
+        <p>主要搭建Jenkins部署服务,让项目如何优雅上线</p>
+<h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><ul>
+<li>Linux下JDK(java)环境 <pre><code>见上一篇! 
+{% post_link Linux下安装Java环境配置步骤详述  Linux下安装Java环境配置步骤详述%}
+</code></pre></li>
+<li>jenkins安装包,这里用rpm安装(安装方法很多种)</li>
+<li>所有环境已上传到百度云:<img src="https://pan.baidu.com/s/1qFGDK-oKXcQ_-zMxJpJLdQ" alt="密码:qkyo"></li>
 </ul>
-<a id="more"></a>
-<ul>
-<li>控制器Controller内返回错误内容</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">return</span> back()-&gt;withErrors([<span class="string">'用户名或密码错误'</span>]);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>视图View内展示错误信息:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    @<span class="keyword">if</span>(count(<span class="variable">$errors</span>) &gt; 0)</span><br><span class="line">        &lt;div class=<span class="string">"alert alert-danger"</span>&gt;</span><br><span class="line">            &lt;ul style=<span class="string">"color:red"</span>&gt;</span><br><span class="line">            @foreach(<span class="variable">$errors</span>-&gt;all() as <span class="variable">$error</span>)</span><br><span class="line">                &lt;li&gt;&#123;&#123;<span class="variable">$error</span>&#125;&#125;&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    @endif</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -310,13 +302,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/01/31/laravel项目报错/">laravel项目报错</a></p>
+        <p><span>本文标题:</span><a  href="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/">PHP优雅上线--Jenkins可持续集成部署</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 七寸扇 的个人博客">七寸扇</a></p>
-        <p><span>发布时间:</span>2018年01月31日 - 11时41分</p>
-        <p><span>最后更新:</span>2018年04月09日 - 14时08分</p>
+        <p><span>发布时间:</span>2018年04月27日 - 11时24分</p>
+        <p><span>最后更新:</span>2018年04月27日 - 14时17分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/01/31/laravel项目报错/" title="laravel项目报错">http://blog.56chzh.com/2018/01/31/laravel项目报错/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.56chzh.com/2018/01/31/laravel项目报错/　　作者: 七寸扇" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/" title="PHP优雅上线--Jenkins可持续集成部署">http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/　　作者: 七寸扇" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -327,18 +319,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/02/02/linux命令/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          linux命令
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2018/01/30/lnmp配置修改/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">lnmp配置修改</div>
+    <a  href="/2018/04/26/Linux下安装Java环境配置步骤详述/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux下安装Java环境配置步骤详述</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -350,7 +333,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具准备"><span class="toc-number">1.</span> <span class="toc-text">工具准备</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -421,13 +404,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/02/02/linux命令/" title="上一篇: linux命令">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/01/30/lnmp配置修改/" title="下一篇: lnmp配置修改">
+            <a  href="/2018/04/26/Linux下安装Java环境配置步骤详述/" title="下一篇: Linux下安装Java环境配置步骤详述">
                 <i class="fa fa-angle-right"></i>
             </a>
         
