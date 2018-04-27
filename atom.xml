@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.56chzh.com/"/>
-  <updated>2018-04-27T06:24:34.780Z</updated>
+  <updated>2018-04-27T06:48:03.287Z</updated>
   <id>http://blog.56chzh.com/</id>
   
   <author>
@@ -21,18 +21,13 @@
     <link href="http://blog.56chzh.com/2018/04/27/PHP%E4%BC%98%E9%9B%85%E4%B8%8A%E7%BA%BF-Jenkins%E5%8F%AF%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E9%83%A8%E7%BD%B2/"/>
     <id>http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/</id>
     <published>2018-04-27T03:24:44.000Z</published>
-    <updated>2018-04-27T06:24:34.780Z</updated>
+    <updated>2018-04-27T06:48:03.287Z</updated>
     
-    <content type="html"><![CDATA[<p>主要搭建Jenkins部署服务,让项目如何优雅上线</p><h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><ul><li>Linux下JDK(java)环境 <pre><code>见上一篇: Linux下安装Java环境配置步骤详述</code></pre></li><li>jenkins安装包,这里用rpm安装(安装方法很多种)</li><li>所有环境已上传到百度云:<a href="https://pan.baidu.com/s/1qFGDK-oKXcQ_-zMxJpJLdQ" target="_blank" rel="noopener">密码:qkyo</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>主要搭建Jenkins部署服务,让项目如何优雅上线<br><a id="more"></a></p><h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><ul><li>Linux下JDK(java)环境 <pre><code>见上一篇: Linux下安装Java环境配置步骤详述</code></pre></li><li>jenkins安装包,这里用rpm安装(安装方法很多种)</li><li>所有环境已上传到百度云:<a href="https://pan.baidu.com/s/1qFGDK-oKXcQ_-zMxJpJLdQ" target="_blank" rel="noopener">密码:qkyo</a></li></ul><ol><li>从百度云中下jenkins-2.46.3-1.1.noarch.rpm 与 jdk-8u131-linux-x64.tar.gz</li></ol><blockquote><p>下载完成后使用xshell或者FTP 上传到服务器中<br>执行以下命令进行安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -ih jenkins-2.46.3-1.1.noarch.rpm</span><br><span class="line"></span><br><span class="line">cat /etc/init.d/jenkins //查看Jenkins自启动脚本内容</span><br></pre></td></tr></table></figure></p></blockquote><p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/1.png" alt=""></p><ul><li>启动Jenkins   <code>service jenkins start</code></li></ul><h4 id="注意-centos-7-系列启动时会出现以下情况"><a href="#注意-centos-7-系列启动时会出现以下情况" class="headerlink" title="注意: centos 7 系列启动时会出现以下情况"></a>注意: centos 7 系列启动时会出现以下情况</h4><p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/2.png" alt=""></p><ul><li>接下来直接执行以下命令即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure></li></ul><p>最后在进行启动:<br><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/3.jpg" alt=""></p><p>最后登录网站进行配置: “<a href="http://IP:8080" target="_blank" rel="noopener">http://IP:8080</a>“</p><p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/4.jpg" alt=""></p><p>密码文件 /var/lib/jenkins/secrets/initialAdminPassword , 然后填入点击 Continue</p><ul><li><p>选择安装<br><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/5.jpg" alt=""></p></li><li><p>安装中<br><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/6.jpg" alt=""></p></li></ul><p>日志文件 /var/log/jenkins/jenkins.log</p><ul><li>安装成功  创建第一个用户</li></ul><p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/7.jpg" alt=""><br><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/8.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;主要搭建Jenkins部署服务,让项目如何优雅上线&lt;/p&gt;
-&lt;h2 id=&quot;工具准备&quot;&gt;&lt;a href=&quot;#工具准备&quot; class=&quot;headerlink&quot; title=&quot;工具准备&quot;&gt;&lt;/a&gt;工具准备&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Linux下JDK(java)环境 &lt;pre&gt;
-      
+      &lt;p&gt;主要搭建Jenkins部署服务,让项目如何优雅上线&lt;br&gt;&lt;/p&gt;
     
     </summary>
     

@@ -9,17 +9,26 @@
   
   <title>PHP优雅上线--Jenkins可持续集成部署 | 七寸扇</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主要搭建Jenkins部署服务,让项目如何优雅上线 工具准备 Linux下JDK(java)环境 见上一篇: Linux下安装Java环境配置步骤详述  jenkins安装包,这里用rpm安装(安装方法很多种) 所有环境已上传到百度云:密码:qkyo">
+  <meta name="description" content="主要搭建Jenkins部署服务,让项目如何优雅上线">
 <meta name="keywords" content="Jenkins,linux,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP优雅上线--Jenkins可持续集成部署">
 <meta property="og:url" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/index.html">
 <meta property="og:site_name" content="七寸扇">
-<meta property="og:description" content="主要搭建Jenkins部署服务,让项目如何优雅上线 工具准备 Linux下JDK(java)环境 见上一篇: Linux下安装Java环境配置步骤详述  jenkins安装包,这里用rpm安装(安装方法很多种) 所有环境已上传到百度云:密码:qkyo">
-<meta property="og:updated_time" content="2018-04-27T06:24:34.780Z">
+<meta property="og:description" content="主要搭建Jenkins部署服务,让项目如何优雅上线">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/1.png">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/2.png">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/3.jpg">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/4.jpg">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/5.jpg">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/6.jpg">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/7.jpg">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/8.jpg">
+<meta property="og:updated_time" content="2018-04-27T06:48:03.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP优雅上线--Jenkins可持续集成部署">
-<meta name="twitter:description" content="主要搭建Jenkins部署服务,让项目如何优雅上线 工具准备 Linux下JDK(java)环境 见上一篇: Linux下安装Java环境配置步骤详述  jenkins安装包,这里用rpm安装(安装方法很多种) 所有环境已上传到百度云:密码:qkyo">
+<meta name="twitter:description" content="主要搭建Jenkins部署服务,让项目如何优雅上线">
+<meta name="twitter:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/1.png">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -284,13 +293,43 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>主要搭建Jenkins部署服务,让项目如何优雅上线</p>
+        <p>主要搭建Jenkins部署服务,让项目如何优雅上线<br><a id="more"></a></p>
 <h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><ul>
 <li>Linux下JDK(java)环境 <pre><code>见上一篇: Linux下安装Java环境配置步骤详述
 </code></pre></li>
 <li>jenkins安装包,这里用rpm安装(安装方法很多种)</li>
 <li>所有环境已上传到百度云:<a href="https://pan.baidu.com/s/1qFGDK-oKXcQ_-zMxJpJLdQ" target="_blank" rel="noopener">密码:qkyo</a></li>
 </ul>
+<ol>
+<li>从百度云中下jenkins-2.46.3-1.1.noarch.rpm 与 jdk-8u131-linux-x64.tar.gz</li>
+</ol>
+<blockquote>
+<p>下载完成后使用xshell或者FTP 上传到服务器中<br>执行以下命令进行安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -ih jenkins-2.46.3-1.1.noarch.rpm</span><br><span class="line"></span><br><span class="line">cat /etc/init.d/jenkins //查看Jenkins自启动脚本内容</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/1.png" alt=""></p>
+<ul>
+<li>启动Jenkins   <code>service jenkins start</code></li>
+</ul>
+<h4 id="注意-centos-7-系列启动时会出现以下情况"><a href="#注意-centos-7-系列启动时会出现以下情况" class="headerlink" title="注意: centos 7 系列启动时会出现以下情况"></a>注意: centos 7 系列启动时会出现以下情况</h4><p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/2.png" alt=""></p>
+<ul>
+<li>接下来直接执行以下命令即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最后在进行启动:<br><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/3.jpg" alt=""></p>
+<p>最后登录网站进行配置: “<a href="http://IP:8080" target="_blank" rel="noopener">http://IP:8080</a>“</p>
+<p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/4.jpg" alt=""></p>
+<p>密码文件 /var/lib/jenkins/secrets/initialAdminPassword , 然后填入点击 Continue</p>
+<ul>
+<li><p>选择安装<br><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/5.jpg" alt=""></p>
+</li>
+<li><p>安装中<br><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/6.jpg" alt=""></p>
+</li>
+</ul>
+<p>日志文件 /var/log/jenkins/jenkins.log</p>
+<ul>
+<li>安装成功  创建第一个用户</li>
+</ul>
+<p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/7.jpg" alt=""><br><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/8.jpg" alt=""></p>
 
       
     </div>
@@ -302,7 +341,7 @@
         <p><span>本文标题:</span><a  href="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/">PHP优雅上线--Jenkins可持续集成部署</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 七寸扇 的个人博客">七寸扇</a></p>
         <p><span>发布时间:</span>2018年04月27日 - 11时24分</p>
-        <p><span>最后更新:</span>2018年04月27日 - 14时24分</p>
+        <p><span>最后更新:</span>2018年04月27日 - 14时48分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/" title="PHP优雅上线--Jenkins可持续集成部署">http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/　　作者: 七寸扇" title=""></span>
@@ -330,7 +369,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具准备"><span class="toc-number">1.</span> <span class="toc-text">工具准备</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#工具准备"><span class="toc-number">1.</span> <span class="toc-text">工具准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注意-centos-7-系列启动时会出现以下情况"><span class="toc-number">1.0.1.</span> <span class="toc-text">注意: centos 7 系列启动时会出现以下情况</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
