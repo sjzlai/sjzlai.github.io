@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.56chzh.com/"/>
-  <updated>2018-04-28T02:34:15.468Z</updated>
+  <updated>2018-04-28T08:13:25.897Z</updated>
   <id>http://blog.56chzh.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>教你如何查看Linux内核及系统版本</title>
+    <link href="http://blog.56chzh.com/2018/04/28/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BLinux%E5%86%85%E6%A0%B8%E5%8F%8A%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC/"/>
+    <id>http://blog.56chzh.com/2018/04/28/教你如何查看Linux内核及系统版本/</id>
+    <published>2018-04-28T06:41:47.000Z</published>
+    <updated>2018-04-28T08:13:25.897Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>1.查看内核版本命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@q1test01 ~]# cat /proc/version</span><br><span class="line">  Linux version 2.6.9-22.ELsmp (bhcompile@crowe.devel.redhat.com) (gcc version 3.4.4 200507213.4.4-2)) #1 SMP Mon Sep 19 18:00:54 EDT 2005</span><br></pre></td></tr></table></figure></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure><p><img src="/2018/04/28/教你如何查看Linux内核及系统版本/1.jpg" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure><p><img src="/2018/04/28/教你如何查看Linux内核及系统版本/2.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;1.查看内核版本命令&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/s
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP优雅上线--Jenkins可持续集成部署</title>
@@ -32,9 +56,9 @@
     </summary>
     
     
-      <category term="Jenkins" scheme="http://blog.56chzh.com/tags/Jenkins/"/>
-    
       <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="Jenkins" scheme="http://blog.56chzh.com/tags/Jenkins/"/>
     
       <category term="Java" scheme="http://blog.56chzh.com/tags/Java/"/>
     
@@ -491,26 +515,6 @@
     
     
       <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git遇到的问题</title>
-    <link href="http://blog.56chzh.com/2018/01/24/git%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://blog.56chzh.com/2018/01/24/git遇到的问题/</id>
-    <published>2018-01-24T12:48:03.000Z</published>
-    <updated>2018-04-09T06:08:59.450Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="git遇到的问题"><a href="#git遇到的问题" class="headerlink" title="git遇到的问题"></a>git遇到的问题</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“Please make sure you have the correct access rights and the repository exists.”</span><br></pre></td></tr></table></figure><a id="more"></a><p>1、首先我得重新在git设置一下身份的名字和邮箱（因为当初都忘了设置啥了，因为遇到坑了）进入到需要提交的文件夹底下（因为直接打开git Bash，在没有路径的情况下，根本没！法！改！刚使用git时遇到的坑。。。）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br><span class="line">git config --global user.email“your@email.com<span class="string">"</span></span><br></pre></td></tr></table></figure></p><ul><li>注:yourname是你要设置的名字，your@email是你要设置的邮箱。</li></ul><h1 id="2、删除-ssh文件夹（直接搜索该文件夹）下的known-hosts-手动删除即可，不需要git）"><a href="#2、删除-ssh文件夹（直接搜索该文件夹）下的known-hosts-手动删除即可，不需要git）" class="headerlink" title="2、删除.ssh文件夹（直接搜索该文件夹）下的known_hosts(手动删除即可，不需要git）"></a>2、删除.ssh文件夹（直接搜索该文件夹）下的known_hosts(手动删除即可，不需要git）</h1><h1 id="3、git输入命令"><a href="#3、git输入命令" class="headerlink" title="3、git输入命令"></a>3、git输入命令</h1><ul><li>$ ssh-keygen -t rsa -C “your@email.com”（请填你设置的邮箱地址）</li></ul><h1 id="接着出现："><a href="#接着出现：" class="headerlink" title="接着出现："></a>接着出现：</h1><ul><li>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</li></ul><h1 id="请直接按下回车"><a href="#请直接按下回车" class="headerlink" title="请直接按下回车"></a>请直接按下回车</h1><ul><li><p>然后系统会自动在.ssh文件夹下生成两个文件，id_rsa和id_rsa.pub，用记事本打开id_rsa.pub</p></li><li><p>将全部的内容复制</p></li></ul><h1 id="4、打开https-github-com-，"><a href="#4、打开https-github-com-，" class="headerlink" title="4、打开https://github.com/，"></a>4、打开<a href="https://github.com/，" target="_blank" rel="noopener">https://github.com/，</a></h1><ul><li><p>登陆你的账户，进入设置进入ssh设置</p></li><li><p>在key中将刚刚复制的粘贴进去</p></li><li><p>点击add ssh key，</p></li></ul><h1 id="ok！设置成功"><a href="#ok！设置成功" class="headerlink" title="ok！设置成功"></a>ok！设置成功</h1><h1 id="5、在git中输入命令："><a href="#5、在git中输入命令：" class="headerlink" title="5、在git中输入命令："></a>5、在git中输入命令：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>然后会跳出一堆话。。</p><h1 id="输入命令：yes"><a href="#输入命令：yes" class="headerlink" title="输入命令：yes"></a>输入命令：yes</h1><p>回车</p><p>然后就会提示你成功了~~</p><h1 id="错误提示：fatal-remote-origin-already-exists"><a href="#错误提示：fatal-remote-origin-already-exists" class="headerlink" title="错误提示：fatal: remote origin already exists."></a>错误提示：fatal: remote origin already exists.</h1><blockquote><p>如果输入$ git remote add origin git@github.com:djqiang（github帐号名）/gitdemo（项目名）.git<br>提示出错信息：fatal: remote origin already exists.</p></blockquote><ul><li><p>解决办法如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">先输入$ git remote rm origin</span><br><span class="line">再输入$ git remote add origin git@github.com:djqiang（github帐号名）/gitdemo（项目名）.git</span><br></pre></td></tr></table></figure></li><li><p>如果还继续报错:error: Could not remove config section ‘remote.origin’</p><blockquote><p>就需要修改gitconfit文件的内容</p></blockquote></li><li><p>找到你的github的安装路径例:C:\Users\ASUS\AppData\Local\GitHub\PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8\etc</p></li><li><p>找到一个名为gitconfig的文件,打开它里边的[remote “origin”] 那行删除即可!!!</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;git遇到的问题&quot;&gt;&lt;a href=&quot;#git遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;git遇到的问题&quot;&gt;&lt;/a&gt;git遇到的问题&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;“Please make sure you have the correct access rights and the repository exists.”&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://blog.56chzh.com/tags/git/"/>
     
   </entry>
   

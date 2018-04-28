@@ -79,13 +79,6 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/find/</loc>
-        <lastmod>2018-04-09T06:08:59.452Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://blog.56chzh.com/tags/nginx/</loc>
         <lastmod>2018-04-09T06:08:59.452Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -93,7 +86,7 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/thinkphp/</loc>
+        <loc>http://blog.56chzh.com/tags/find/</loc>
         <lastmod>2018-04-09T06:08:59.452Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -101,6 +94,13 @@
 
     <url>
         <loc>http://blog.56chzh.com/tags/nodejs/</loc>
+        <lastmod>2018-04-09T06:08:59.452Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/tags/thinkphp/</loc>
         <lastmod>2018-04-09T06:08:59.452Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -128,13 +128,6 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/fileinfo/</loc>
-        <lastmod>2018-04-09T06:08:59.453Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://blog.56chzh.com/tags/mysql/</loc>
         <lastmod>2018-04-09T06:08:59.453Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -143,6 +136,13 @@
 
     <url>
         <loc>http://blog.56chzh.com/tags/composer/</loc>
+        <lastmod>2018-04-09T06:08:59.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/tags/fileinfo/</loc>
         <lastmod>2018-04-09T06:08:59.453Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -191,15 +191,15 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/linux/</loc>
+        <loc>http://blog.56chzh.com/tags/Java/</loc>
         <lastmod>2018-04-28T02:34:15.468Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/Java/</loc>
-        <lastmod>2018-04-28T02:34:15.468Z</lastmod>
+        <loc>http://blog.56chzh.com/tags/linux/</loc>
+        <lastmod>2018-04-28T08:13:25.897Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
