@@ -17,6 +17,7 @@
 <meta property="og:site_name" content="七寸扇">
 <meta property="og:description" content="主要搭建Jenkins部署服务,让项目如何优雅上线">
 <meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/1.png">
+<meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/9.jpg">
 <meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/2.png">
 <meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/3.jpg">
 <meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/4.jpg">
@@ -24,7 +25,7 @@
 <meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/6.jpg">
 <meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/7.jpg">
 <meta property="og:image" content="http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/8.jpg">
-<meta property="og:updated_time" content="2018-04-27T06:48:03.287Z">
+<meta property="og:updated_time" content="2018-04-28T02:34:15.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP优雅上线--Jenkins可持续集成部署">
 <meta name="twitter:description" content="主要搭建Jenkins部署服务,让项目如何优雅上线">
@@ -312,7 +313,19 @@
 </blockquote>
 <p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/1.png" alt=""></p>
 <ul>
-<li>启动Jenkins   <code>service jenkins start</code></li>
+<li>修改端口号<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/jenkins</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/9.jpg" alt=""></p>
+<ul>
+<li><p>防火墙放行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### sudo vim /etc/sysconfig/iptables</span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT</span><br><span class="line">### 重启生效: sudo systemctl restart iptables</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>卸载<br>如果要重装，或者本机不需要 Jenkins，可卸载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo systemctl stop jenkins</span><br><span class="line">sudo systemctl disable jenkins</span><br><span class="line">sudo yum -y remove jenkins</span><br><span class="line">sudo rm -rf /var/&#123;lib,log,cache&#125;/jenkins /usr/lib/jenkins /root/.jenkins</span><br><span class="line">sudo rm -rf `sudo find /&#123;etc,var,run&#125; -name &quot;jenkins*&quot;`</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动Jenkins   <code>service jenkins start</code></p>
+</li>
 </ul>
 <h4 id="注意-centos-7-系列启动时会出现以下情况"><a href="#注意-centos-7-系列启动时会出现以下情况" class="headerlink" title="注意: centos 7 系列启动时会出现以下情况"></a>注意: centos 7 系列启动时会出现以下情况</h4><p><img src="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/2.png" alt=""></p>
 <ul>
@@ -345,7 +358,7 @@
         <p><span>本文标题:</span><a  href="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/">PHP优雅上线--Jenkins可持续集成部署</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 七寸扇 的个人博客">七寸扇</a></p>
         <p><span>发布时间:</span>2018年04月27日 - 11时24分</p>
-        <p><span>最后更新:</span>2018年04月27日 - 14时48分</p>
+        <p><span>最后更新:</span>2018年04月28日 - 10时34分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/" title="PHP优雅上线--Jenkins可持续集成部署">http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.56chzh.com/2018/04/27/PHP优雅上线-Jenkins可持续集成部署/　　作者: 七寸扇" title=""></span>
