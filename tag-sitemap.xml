@@ -177,21 +177,7 @@
     </url>
 
     <url>
-        <loc>http://blog.56chzh.com/tags/java/</loc>
-        <lastmod>2018-04-27T03:31:05.586Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://blog.56chzh.com/tags/Jenkins/</loc>
-        <lastmod>2018-04-27T06:48:03.287Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://blog.56chzh.com/tags/linux/</loc>
         <lastmod>2018-04-27T06:48:03.287Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -200,6 +186,20 @@
     <url>
         <loc>http://blog.56chzh.com/tags/Java/</loc>
         <lastmod>2018-04-27T06:48:03.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/tags/linux/</loc>
+        <lastmod>2018-04-28T01:29:00.360Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blog.56chzh.com/tags/java/</loc>
+        <lastmod>2018-04-28T01:29:00.360Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
