@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.56chzh.com/"/>
-  <updated>2018-04-28T08:13:25.897Z</updated>
+  <updated>2018-05-09T08:38:52.974Z</updated>
   <id>http://blog.56chzh.com/</id>
   
   <author>
@@ -17,21 +17,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>docker使用</title>
+    <link href="http://blog.56chzh.com/2018/05/09/docker%E4%BD%BF%E7%94%A8/"/>
+    <id>http://blog.56chzh.com/2018/05/09/docker使用/</id>
+    <published>2018-05-09T07:58:09.000Z</published>
+    <updated>2018-05-09T08:38:52.974Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用非root 用户:</p><pre><code>sudo groupadd docker                添加docker用户组sudo gpasswd -a ${USER} docker      添加用户到docker用户组sudo service docker restart         重启docker</code></pre><a id="more"></a><ul><li><p>容器的基本操作</p><p>  启动容器</p><pre><code><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> IMAGE [COMMAND] [ARG...]</span></span><br><span class="line"><span class="bash">run 在新容器中执行命令</span></span><br><span class="line"><span class="bash">例:docker run centos <span class="built_in">echo</span> <span class="string">'hello word'</span></span></span><br></pre></td></tr></table></figure></code></pre></li></ul><ul><li><p>启动交互式容器</p><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    docker run -i -t IMAGE /bin/bash</span><br><span class="line">        -<span class="ruby">i  --interactive=<span class="literal">true</span><span class="params">|<span class="literal">false</span> 默认是<span class="literal">false</span></span></span></span><br><span class="line"><span class="ruby">        -t  --tty=<span class="literal">true</span><span class="params">|<span class="literal">false</span>    默认是<span class="literal">false</span></span></span></span><br><span class="line"><span class="ruby">    </span></span><br><span class="line"><span class="ruby"><span class="string">``</span><span class="string">`  </span></span></span><br><span class="line"><span class="ruby">* 查看容器</span></span><br></pre></td></tr></table></figure><p>  docker ps [-a] [-l]<br>  docker inspect   </p><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>重新启动停止的容器</span><br></pre></td></tr></table></figure><p>  docker start [-i] 容器名</p><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>删除停止的容器</span><br></pre></td></tr></table></figure><p>  docker rm 容器名</p></li></ul><p>```</p><ul><li>守护式容器</li></ul><p>以守护形式运行容器</p><pre><code>docker run -i -t IMAGE /bin/bashCtrl+P Ctrl+Q</code></pre><p>附加到运行中的容器<br>    docker attach 容器名</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用非root 用户:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo groupadd docker                添加docker用户组
+sudo gpasswd -a ${USER} docker      添加用户到docker用户组
+sudo service docker restart         重启docker
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="docker" scheme="http://blog.56chzh.com/tags/docker/"/>
+    
+      <category term="centos" scheme="http://blog.56chzh.com/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker安装</title>
+    <link href="http://blog.56chzh.com/2018/05/08/docker%E5%AE%89%E8%A3%85/"/>
+    <id>http://blog.56chzh.com/2018/05/08/docker安装/</id>
+    <published>2018-05-08T08:58:38.000Z</published>
+    <updated>2018-05-09T08:22:51.280Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>Docker的三大核心概念：镜像、容器、仓库</p><a id="more"></a><p>  镜像：类似虚拟机的镜像、用俗话说就是安装文件。</p><p>  容器：类似一个轻量级的沙箱，容器是从镜像创建应用运行实例，</p><p>  可以将其启动、开始、停止、删除、而这些容器都是相互隔离、互不可见的。</p><p>  仓库：类似代码仓库，是Docker集中存放镜像文件的场所。</p></li></ul><ul><li><p>简单介绍一下在CentOS上安装Docker。</p></li><li><p>1.检查linux 系统版本 </p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure><p>  <img src="/2018/05/08/docker安装/./2.jpg" alt=""><br>  注:linux版本需要高于3.10版本,可自行百度升级版本!</p></li><li><p>2.使用 sudo 或 root 权限的用户登入终端。</p></li><li><p>3.确保yum是最新的</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure></li><li><p>4.添加yum仓库</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tee /etc/yum.repos.d/docker.repo &lt;&lt;-&apos;EOF&apos;  </span><br><span class="line">[dockerrepo]  </span><br><span class="line">name=Docker Repository  </span><br><span class="line">baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/  </span><br><span class="line">enabled=1  </span><br><span class="line">gpgcheck=1  </span><br><span class="line">gpgkey=https://yum.dockerproject.org/gpg  </span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></li><li><p>5.安装Docker<br>  yum install -y docker-engine<br>安装成功后,使用docker version命令查看是否安装成功,安装成功后—-如下图<br><img src="/2018/05/08/docker安装/1.jpg" alt=""></p></li><li><p>6.启动docker</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker.service</span><br></pre></td></tr></table></figure></li><li><p>7.验证安装是否成功(client和service两部分表示docker安装启动都成功了)<br>使用docker version命令查看</p></li></ul><p><img src="/2018/05/08/docker安装/./1.jpg" alt=""></p><ul><li>8.设置开机自启动<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure></li></ul><h3 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成!!!"></a>安装完成!!!</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Docker的三大核心概念：镜像、容器、仓库&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
+    
+      <category term="docker" scheme="http://blog.56chzh.com/tags/docker/"/>
+    
+      <category term="centos" scheme="http://blog.56chzh.com/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
     <title>教你如何查看Linux内核及系统版本</title>
     <link href="http://blog.56chzh.com/2018/04/28/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8BLinux%E5%86%85%E6%A0%B8%E5%8F%8A%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC/"/>
     <id>http://blog.56chzh.com/2018/04/28/教你如何查看Linux内核及系统版本/</id>
     <published>2018-04-28T06:41:47.000Z</published>
-    <updated>2018-04-28T08:13:25.897Z</updated>
+    <updated>2018-05-10T02:01:25.431Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>1.查看内核版本命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@q1test01 ~]# cat /proc/version</span><br><span class="line">  Linux version 2.6.9-22.ELsmp (bhcompile@crowe.devel.redhat.com) (gcc version 3.4.4 200507213.4.4-2)) #1 SMP Mon Sep 19 18:00:54 EDT 2005</span><br></pre></td></tr></table></figure></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure><p><img src="/2018/04/28/教你如何查看Linux内核及系统版本/1.jpg" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure><p><img src="/2018/04/28/教你如何查看Linux内核及系统版本/2.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<ul><li>1.查看内核版本命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@q1test01 ~]# cat /proc/version</span><br><span class="line">  Linux version 2.6.9-22.ELsmp (bhcompile@crowe.devel.redhat.com) (gcc version 3.4.4 200507213.4.4-2)) #1 SMP Mon Sep 19 18:00:54 EDT 2005</span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure><p><img src="/2018/04/28/教你如何查看Linux内核及系统版本/1.jpg" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure><p><img src="/2018/04/28/教你如何查看Linux内核及系统版本/2.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;1.查看内核版本命令&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/s
-      
+      &lt;ul&gt;
+&lt;li&gt;1.查看内核版本命令&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[root@q1test01 ~]# cat /proc/version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Linux version 2.6.9-22.ELsmp (bhcompile@crowe.devel.redhat.com) (gcc version 3.4.4 200507213.4.4-2)) #1 SMP Mon Sep 19 18:00:54 EDT 2005&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -465,56 +517,6 @@
     
     
       <category term="git" scheme="http://blog.56chzh.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>laravel时间戳</title>
-    <link href="http://blog.56chzh.com/2018/01/26/laravel%E6%97%B6%E9%97%B4%E6%88%B3/"/>
-    <id>http://blog.56chzh.com/2018/01/26/laravel时间戳/</id>
-    <published>2018-01-26T08:39:50.000Z</published>
-    <updated>2018-04-09T06:08:59.451Z</updated>
-    
-    <content type="html"><![CDATA[<p>在数据表中创建时添加create_at、和update_at两个字段</p><ul><li>在添加数据时,model方法中开启自动维护</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public <span class="variable">$timestamps</span> = <span class="literal">true</span>;</span><br><span class="line">//存储时使用时间戳形式</span><br><span class="line">protected <span class="keyword">function</span> getDateFormat()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">return</span> time();</span><br><span class="line">    &#125;</span><br><span class="line">//查询时返回时间戳形式</span><br><span class="line">protected <span class="keyword">function</span> asDateTime(<span class="variable">$val</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$val</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在数据表中创建时添加create_at、和update_at两个字段&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在添加数据时,model方法中开启自动维护&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
-      
-    
-    </summary>
-    
-    
-      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
-    
-      <category term="时间戳" scheme="http://blog.56chzh.com/tags/%E6%97%B6%E9%97%B4%E6%88%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>laravel下载和安装</title>
-    <link href="http://blog.56chzh.com/2018/01/25/laravel%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/"/>
-    <id>http://blog.56chzh.com/2018/01/25/laravel下载和安装/</id>
-    <published>2018-01-25T09:12:56.000Z</published>
-    <updated>2018-04-09T06:08:59.451Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="composer-的下载及安装"><a href="#composer-的下载及安装" class="headerlink" title=" composer 的下载及安装"></a> composer 的下载及安装</h1><p>链接:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>选择Comeposer-Setup.exe</p><a id="more"></a><ul><li>下载完成后,直接双击安装至完成</li></ul><h1 id="使用composer下载安装laravel"><a href="#使用composer下载安装laravel" class="headerlink" title=" 使用composer下载安装laravel"></a> 使用composer下载安装laravel</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project laravel/laravel=5.2.* --prefer-dist</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;composer-的下载及安装&quot;&gt;&lt;a href=&quot;#composer-的下载及安装&quot; class=&quot;headerlink&quot; title=&quot; composer 的下载及安装&quot;&gt;&lt;/a&gt; composer 的下载及安装&lt;/h1&gt;&lt;p&gt;链接:&lt;a href=&quot;https://getcomposer.org/download/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://getcomposer.org/download/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;选择Comeposer-Setup.exe&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
     
   </entry>
   

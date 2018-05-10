@@ -182,7 +182,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/302/" style="font-size: 10px;">302</a> <a href="/tags/500错误/" style="font-size: 10px;">500错误</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/composer/" style="font-size: 10px;">composer</a> <a href="/tags/fileinfo/" style="font-size: 10px;">fileinfo</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/hooks/" style="font-size: 10px;">hooks</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/laravel/" style="font-size: 20px;">laravel</a> <a href="/tags/laravel扩展/" style="font-size: 10px;">laravel扩展</a> <a href="/tags/linux/" style="font-size: 18px;">linux</a> <a href="/tags/lnmp/" style="font-size: 14px;">lnmp</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/rewrite/" style="font-size: 12px;">rewrite</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/withErrors/" style="font-size: 10px;">withErrors</a> <a href="/tags/时间戳/" style="font-size: 10px;">时间戳</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+                        <a href="/tags/302/" style="font-size: 10px;">302</a> <a href="/tags/500错误/" style="font-size: 10px;">500错误</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Jenkins/" style="font-size: 10px;">Jenkins</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/centos/" style="font-size: 12.5px;">centos</a> <a href="/tags/composer/" style="font-size: 10px;">composer</a> <a href="/tags/docker/" style="font-size: 12.5px;">docker</a> <a href="/tags/fileinfo/" style="font-size: 10px;">fileinfo</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/hooks/" style="font-size: 10px;">hooks</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/laravel/" style="font-size: 20px;">laravel</a> <a href="/tags/laravel扩展/" style="font-size: 10px;">laravel扩展</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lnmp/" style="font-size: 15px;">lnmp</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/rewrite/" style="font-size: 12.5px;">rewrite</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/withErrors/" style="font-size: 10px;">withErrors</a> <a href="/tags/时间戳/" style="font-size: 10px;">时间戳</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
                     </div>
                 </section>
                 
@@ -250,6 +250,138 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-使用Nginx对Laravel进行负载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/03/01/使用Nginx对Laravel进行负载/" class="article-date">
+      <time datetime="2018-03-01T08:34:58.000Z" itemprop="datePublished">2018-03-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/03/01/使用Nginx对Laravel进行负载/">使用Nginx对Laravel进行负载</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h4 id="有两台web服务器-A-10-0-0-2-B-10-0-0-3，系统的域名为-www-c-com，使用A使用为反向代理服务器"><a href="#有两台web服务器-A-10-0-0-2-B-10-0-0-3，系统的域名为-www-c-com，使用A使用为反向代理服务器" class="headerlink" title="有两台web服务器 A:10.0.0.2 , B:10.0.0.3，系统的域名为 www.c.com，使用A使用为反向代理服务器"></a>有两台web服务器 A:10.0.0.2 , B:10.0.0.3，系统的域名为 www.c.com，使用A使用为反向代理服务器</h4><h4 id="A服务器的nginx配置"><a href="#A服务器的nginx配置" class="headerlink" title="A服务器的nginx配置"></a>A服务器的nginx配置</h4>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel/">laravel</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2018/03/01/使用Nginx对Laravel进行负载/#more">余下全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ajax小结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/02/26/ajax小结/" class="article-date">
+      <time datetime="2018-02-26T06:38:15.000Z" itemprop="datePublished">2018-02-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/02/26/ajax小结/">ajax小结</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h5 id="1-延迟时间"><a href="#1-延迟时间" class="headerlink" title="1. 延迟时间"></a>1. 延迟时间</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    $(<span class="string">"#id"</span>).html(datastr);</span><br><span class="line">  &#125;, 1000);</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a   href="/2018/02/26/ajax小结/#more">余下全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-Hexo博客部署到个人服务器" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -796,139 +928,6 @@
       
         <p class="article-more-link">
           <a   href="/2018/01/30/git命令指南/#more">余下全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-laravel时间戳" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/01/26/laravel时间戳/" class="article-date">
-      <time datetime="2018-01-26T08:39:50.000Z" itemprop="datePublished">2018-01-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/01/26/laravel时间戳/">laravel时间戳</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>在数据表中创建时添加create_at、和update_at两个字段</p>
-<ul>
-<li>在添加数据时,model方法中开启自动维护</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public <span class="variable">$timestamps</span> = <span class="literal">true</span>;</span><br><span class="line">//存储时使用时间戳形式</span><br><span class="line">protected <span class="keyword">function</span> getDateFormat()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">return</span> time();</span><br><span class="line">    &#125;</span><br><span class="line">//查询时返回时间戳形式</span><br><span class="line">protected <span class="keyword">function</span> asDateTime(<span class="variable">$val</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$val</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel/">laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间戳/">时间戳</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-laravel下载和安装" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/01/25/laravel下载和安装/" class="article-date">
-      <time datetime="2018-01-25T09:12:56.000Z" itemprop="datePublished">2018-01-25</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/01/25/laravel下载和安装/">laravel下载和安装</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="composer-的下载及安装"><a href="#composer-的下载及安装" class="headerlink" title=" composer 的下载及安装"></a> composer 的下载及安装</h1><p>链接:<a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p>
-<p>选择Comeposer-Setup.exe</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel/">laravel</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/01/25/laravel下载和安装/#more">余下全文 >></a>
         </p>
       
       <div class="clearfix"></div>
