@@ -284,18 +284,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="laravel自定义返回错误方法"><a href="#laravel自定义返回错误方法" class="headerlink" title="laravel自定义返回错误方法"></a>laravel自定义返回错误方法</h2><ul>
-<li><p>返回视图传递错误信息</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoErr</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'error'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回视图提示消息</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoMsg</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'message'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>视图页面提示消息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@if(session(&apos;error&apos;))</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var session = &quot;&#123;&#123;session(&apos;error&apos;)&#125;&#125;&quot;;</span><br><span class="line">        layer.msg(session);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">@endif</span><br><span class="line">@if(session(&apos;message&apos;))</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var session = &quot;&#123;&#123;session(&apos;message&apos;)&#125;&#125;&quot;;</span><br><span class="line">        layer.msg(session);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">@endif</span><br></pre></td></tr></table></figure>
+              <h2 id="laravel自定义返回错误方法"><a href="#laravel自定义返回错误方法" class="headerlink" title="laravel自定义返回错误方法"></a>laravel自定义返回错误方法</h2><ul>
+<li>返回视图传递错误信息<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoErr</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'error'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-
+          
       
     </div>
     
@@ -308,6 +301,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel/">-laravel</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a   href="/2018/08/17/laravel显示错误信息/#more">余下全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -356,16 +353,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong>下载安装</strong><br>        <a href="https://studygolang.com/dl" target="_blank" rel="noopener">https://studygolang.com/dl</a></p>
-<p>使用var关键字<br>var a,b,c bool<br>var s1,s2 string = “hello”, “world”<br>可以放在函数内,或直接放在包内</p>
-<p>使用var()集中定义变量</p>
-<p>让编译器自动决定类型<br>var a,b,i,s1,s2 = ture,false,3,”hello”,”world”</p>
-<p>使用:= 定义变量<br>a,b,i,s1,s2 := ture,false,3,”hello”,”world”<br>注意:只能在函数内使用</p>
-<p>内建变量类型<br>bool ,string<br>(u)int,(u)int8,(u)int16,(u)int32,(u)int64,unitptr<br>byte,rune<br>float32,float64,complex64,complex128</p>
-<p>强制类型转换</p>
-<p>类型转换是强制的</p>
-<p>常量的定义</p>
-
+              <p><strong>下载安装</strong><br>        <a href="https://studygolang.com/dl" target="_blank" rel="noopener">https://studygolang.com/dl</a><br></p>
+          
       
     </div>
     
@@ -378,6 +367,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go/">Go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/">Golang</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a   href="/2018/05/30/GO语言的安装与开发环境/#more">余下全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.56chzh.com/"/>
-  <updated>2018-08-17T08:23:10.984Z</updated>
+  <updated>2018-08-17T08:40:52.552Z</updated>
   <id>http://blog.56chzh.com/</id>
   
   <author>
@@ -21,17 +21,16 @@
     <link href="http://blog.56chzh.com/2018/08/17/laravel%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF/"/>
     <id>http://blog.56chzh.com/2018/08/17/laravel显示错误信息/</id>
     <published>2018-08-17T08:04:12.000Z</published>
-    <updated>2018-08-17T08:23:10.984Z</updated>
+    <updated>2018-08-17T08:40:52.552Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="laravel自定义返回错误方法"><a href="#laravel自定义返回错误方法" class="headerlink" title="laravel自定义返回错误方法"></a>laravel自定义返回错误方法</h2><ul><li><p>返回视图传递错误信息</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoErr</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'error'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>返回视图提示消息</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoMsg</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'message'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>视图页面提示消息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@if(session(&apos;error&apos;))</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var session = &quot;&#123;&#123;session(&apos;error&apos;)&#125;&#125;&quot;;</span><br><span class="line">        layer.msg(session);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">@endif</span><br><span class="line">@if(session(&apos;message&apos;))</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var session = &quot;&#123;&#123;session(&apos;message&apos;)&#125;&#125;&quot;;</span><br><span class="line">        layer.msg(session);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">@endif</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="laravel自定义返回错误方法"><a href="#laravel自定义返回错误方法" class="headerlink" title="laravel自定义返回错误方法"></a>laravel自定义返回错误方法</h2><ul><li>返回视图传递错误信息<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoErr</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'error'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><ul><li><p>返回视图提示消息</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoMsg</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'message'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>视图页面提示消息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@if(session(&apos;error&apos;))</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var session = &quot;&#123;&#123;session(&apos;error&apos;)&#125;&#125;&quot;;</span><br><span class="line">        layer.msg(session);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">@endif</span><br><span class="line">@if(session(&apos;message&apos;))</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var session = &quot;&#123;&#123;session(&apos;message&apos;)&#125;&#125;&quot;;</span><br><span class="line">        layer.msg(session);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">@endif</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;laravel自定义返回错误方法&quot;&gt;&lt;a href=&quot;#laravel自定义返回错误方法&quot; class=&quot;headerlink&quot; title=&quot;laravel自定义返回错误方法&quot;&gt;&lt;/a&gt;laravel自定义返回错误方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;返回视图传
-      
+      &lt;h2 id=&quot;laravel自定义返回错误方法&quot;&gt;&lt;a href=&quot;#laravel自定义返回错误方法&quot; class=&quot;headerlink&quot; title=&quot;laravel自定义返回错误方法&quot;&gt;&lt;/a&gt;laravel自定义返回错误方法&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;返回视图传递错误信息&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;withInfoErr&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($msg)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; back()-&amp;gt;with(&lt;span class=&quot;string&quot;&gt;&#39;error&#39;&lt;/span&gt;,$msg);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -45,17 +44,13 @@
     <link href="http://blog.56chzh.com/2018/05/30/GO%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     <id>http://blog.56chzh.com/2018/05/30/GO语言的安装与开发环境/</id>
     <published>2018-05-30T07:35:32.000Z</published>
-    <updated>2018-05-31T01:47:29.457Z</updated>
+    <updated>2018-08-17T08:40:52.504Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>下载安装</strong><br>        <a href="https://studygolang.com/dl" target="_blank" rel="noopener">https://studygolang.com/dl</a></p><p>使用var关键字<br>var a,b,c bool<br>var s1,s2 string = “hello”, “world”<br>可以放在函数内,或直接放在包内</p><p>使用var()集中定义变量</p><p>让编译器自动决定类型<br>var a,b,i,s1,s2 = ture,false,3,”hello”,”world”</p><p>使用:= 定义变量<br>a,b,i,s1,s2 := ture,false,3,”hello”,”world”<br>注意:只能在函数内使用</p><p>内建变量类型<br>bool ,string<br>(u)int,(u)int8,(u)int16,(u)int32,(u)int64,unitptr<br>byte,rune<br>float32,float64,complex64,complex128</p><p>强制类型转换</p><p>类型转换是强制的</p><p>常量的定义</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>下载安装</strong><br>        <a href="https://studygolang.com/dl" target="_blank" rel="noopener">https://studygolang.com/dl</a><br>        <a id="more"></a><br>使用var关键字<br>var a,b,c bool<br>var s1,s2 string = “hello”, “world”<br>可以放在函数内,或直接放在包内</p><p>使用var()集中定义变量</p><p>让编译器自动决定类型<br>var a,b,i,s1,s2 = ture,false,3,”hello”,”world”</p><p>使用:= 定义变量<br>a,b,i,s1,s2 := ture,false,3,”hello”,”world”<br>注意:只能在函数内使用</p><p>内建变量类型<br>bool ,string<br>(u)int,(u)int8,(u)int16,(u)int32,(u)int64,unitptr<br>byte,rune<br>float32,float64,complex64,complex128</p><p>强制类型转换</p><p>类型转换是强制的</p><p>常量的定义</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;&lt;strong&gt;下载安装&lt;/strong&gt;&lt;br&gt;        &lt;a href=&quot;https://studygolang.com/dl&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://studygolang.com/dl&lt;/a&gt;&lt;/p&gt;
-&lt;
-      
+      &lt;p&gt;&lt;strong&gt;下载安装&lt;/strong&gt;&lt;br&gt;        &lt;a href=&quot;https://studygolang.com/dl&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://studygolang.com/dl&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
     
     </summary>
     

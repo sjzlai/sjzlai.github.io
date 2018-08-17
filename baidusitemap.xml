@@ -5,13 +5,32 @@
     
   <url>
     <loc>http://blog.56chzh.com/2018/08/17/laravel%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF/</loc>
-    <lastmod>2018-08-17T08:23:10.984Z</lastmod>
+    <lastmod>2018-08-17T08:40:52.552Z</lastmod>
     <data>
         <display>
         <title>laravel显示错误信息</title>
         <pubTime>2018-08-17T08:04:12.000Z</pubTime>
         
         <tag>-laravel</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.56chzh.com/2018/05/30/GO%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2018-08-17T08:40:52.504Z</lastmod>
+    <data>
+        <display>
+        <title>GO语言的安装与开发环境</title>
+        <pubTime>2018-05-30T07:35:32.000Z</pubTime>
+        
+        <tag>Golang</tag>
+         
+        <tag>Go</tag>
          
          
            
@@ -54,25 +73,6 @@
         <tag>github</tag>
          
         <tag>hooks</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.56chzh.com/2018/05/30/GO%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
-    <lastmod>2018-05-31T01:47:29.457Z</lastmod>
-    <data>
-        <display>
-        <title>GO语言的安装与开发环境</title>
-        <pubTime>2018-05-30T07:35:32.000Z</pubTime>
-        
-        <tag>Golang</tag>
-         
-        <tag>Go</tag>
          
          
            
