@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.56chzh.com/"/>
-  <updated>2018-05-23T03:04:50.528Z</updated>
+  <updated>2018-08-17T08:23:10.984Z</updated>
   <id>http://blog.56chzh.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>laravel显示错误信息</title>
+    <link href="http://blog.56chzh.com/2018/08/17/laravel%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF/"/>
+    <id>http://blog.56chzh.com/2018/08/17/laravel显示错误信息/</id>
+    <published>2018-08-17T08:04:12.000Z</published>
+    <updated>2018-08-17T08:23:10.984Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="laravel自定义返回错误方法"><a href="#laravel自定义返回错误方法" class="headerlink" title="laravel自定义返回错误方法"></a>laravel自定义返回错误方法</h2><ul><li><p>返回视图传递错误信息</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoErr</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'error'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>返回视图提示消息</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withInfoMsg</span><span class="params">($msg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> back()-&gt;with(<span class="string">'message'</span>,$msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>视图页面提示消息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@if(session(&apos;error&apos;))</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var session = &quot;&#123;&#123;session(&apos;error&apos;)&#125;&#125;&quot;;</span><br><span class="line">        layer.msg(session);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">@endif</span><br><span class="line">@if(session(&apos;message&apos;))</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var session = &quot;&#123;&#123;session(&apos;message&apos;)&#125;&#125;&quot;;</span><br><span class="line">        layer.msg(session);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">@endif</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;laravel自定义返回错误方法&quot;&gt;&lt;a href=&quot;#laravel自定义返回错误方法&quot; class=&quot;headerlink&quot; title=&quot;laravel自定义返回错误方法&quot;&gt;&lt;/a&gt;laravel自定义返回错误方法&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;返回视图传
+      
+    
+    </summary>
+    
+    
+      <category term="-laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GO语言的安装与开发环境</title>
+    <link href="http://blog.56chzh.com/2018/05/30/GO%E8%AF%AD%E8%A8%80%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://blog.56chzh.com/2018/05/30/GO语言的安装与开发环境/</id>
+    <published>2018-05-30T07:35:32.000Z</published>
+    <updated>2018-05-31T01:47:29.457Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>下载安装</strong><br>        <a href="https://studygolang.com/dl" target="_blank" rel="noopener">https://studygolang.com/dl</a></p><p>使用var关键字<br>var a,b,c bool<br>var s1,s2 string = “hello”, “world”<br>可以放在函数内,或直接放在包内</p><p>使用var()集中定义变量</p><p>让编译器自动决定类型<br>var a,b,i,s1,s2 = ture,false,3,”hello”,”world”</p><p>使用:= 定义变量<br>a,b,i,s1,s2 := ture,false,3,”hello”,”world”<br>注意:只能在函数内使用</p><p>内建变量类型<br>bool ,string<br>(u)int,(u)int8,(u)int16,(u)int32,(u)int64,unitptr<br>byte,rune<br>float32,float64,complex64,complex128</p><p>强制类型转换</p><p>类型转换是强制的</p><p>常量的定义</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;下载安装&lt;/strong&gt;&lt;br&gt;        &lt;a href=&quot;https://studygolang.com/dl&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://studygolang.com/dl&lt;/a&gt;&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Golang" scheme="http://blog.56chzh.com/tags/Golang/"/>
+    
+      <category term="Go" scheme="http://blog.56chzh.com/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>linux下安装python3</title>
@@ -132,9 +182,9 @@ sudo service docker restart         重启docker
     </summary>
     
     
-      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
-    
       <category term="Jenkins" scheme="http://blog.56chzh.com/tags/Jenkins/"/>
+    
+      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
     
       <category term="Java" scheme="http://blog.56chzh.com/tags/Java/"/>
     
@@ -326,9 +376,9 @@ sudo service docker restart         重启docker
     <link href="http://blog.56chzh.com/2018/02/22/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://blog.56chzh.com/2018/02/22/Hexo博客部署到个人服务器/</id>
     <published>2018-02-22T01:28:20.000Z</published>
-    <updated>2018-04-09T06:08:59.449Z</updated>
+    <updated>2018-07-24T06:39:31.231Z</updated>
     
-    <content type="html"><![CDATA[<p>本文跳过阿里云创建git仓库、hexo部署到github的步骤，有需要的可以移步下面博客地址查看：</p><ol><li><p>在阿里云服务器上创建git远程仓库</p></li><li><p>使用Hexo建立博客</p></li></ol><h1 id="一、服务器相关配置"><a href="#一、服务器相关配置" class="headerlink" title="一、服务器相关配置"></a>一、服务器相关配置</h1><a id="more"></a><p>本文使用hexo在本地生成静态文件，然后将静态文件提交到个人服务器的git仓库，最后用Nginx提供web服务的方式。</p><h1 id="1、Nginx配置"><a href="#1、Nginx配置" class="headerlink" title="1、Nginx配置"></a>1、Nginx配置</h1><p>Nginx正常配置一个虚拟主机来存放静态文件即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">     &#123;</span><br><span class="line">         listen 80;</span><br><span class="line">         <span class="comment">#listen [::]:80;</span></span><br><span class="line">         server_name blog.qicunshan.com ;</span><br><span class="line">         index index.html index.htm index.php default.html default.htm default.php;</span><br><span class="line">         root  /home/wwwroot/blog.qicunshan.com/blog;</span><br><span class="line"></span><br><span class="line">         <span class="comment">#include other.conf;</span></span><br><span class="line">         <span class="comment">#error_page   404   /404.html;</span></span><br><span class="line"></span><br><span class="line">         <span class="comment"># Deny access to PHP files in specific directory</span></span><br><span class="line">         <span class="comment">#location ~ /(wp-content|uploads|wp-includes|images)/.*\.php$ &#123; deny all; &#125;</span></span><br><span class="line"></span><br><span class="line">         include <span class="built_in">enable</span>-php.conf;</span><br><span class="line"></span><br><span class="line">         location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$</span><br><span class="line">         &#123;</span><br><span class="line">             expires      30d;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ .*\.(js|css)?$</span><br><span class="line">         &#123;</span><br><span class="line">             expires      12h;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ /.well-known &#123;</span><br><span class="line">             allow all;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ /\.</span><br><span class="line">         &#123;</span><br><span class="line">             deny all;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         access_log  /home/wwwlogs/blog.qicunshan.com.log;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure><p>需要注意的是：</p><ul><li><p>git用户的权限；</p></li><li><p>虚拟主机路径，且默认主页是index.html。</p></li></ul><h1 id="2、创建git仓库"><a href="#2、创建git仓库" class="headerlink" title="2、创建git仓库"></a>2、创建git仓库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建仓库目录</span></span><br><span class="line">mkdir blog.git</span><br><span class="line"><span class="comment">#进入仓库目录</span></span><br><span class="line"><span class="built_in">cd</span> blog.git</span><br><span class="line"><span class="comment">#创建仓库</span></span><br><span class="line">git init --bare</span><br></pre></td></tr></table></figure><p>创建完后可以使用下面命令测试一下仓库地址，克隆成功说明没有问题。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> 仓库地址</span><br></pre></td></tr></table></figure><h1 id="3、Git-hooks配置"><a href="#3、Git-hooks配置" class="headerlink" title="3、Git hooks配置"></a>3、Git hooks配置</h1><ul><li>新建脚本，使git hooks每次push完成之后，将仓库中的静态文件复制到Nginx对应的虚拟主机中；</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新建脚本</span></span><br><span class="line">vim post-receive</span><br></pre></td></tr></table></figure><h5 id="脚本内容如下"><a href="#脚本内容如下" class="headerlink" title="脚本内容如下:"></a>脚本内容如下:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash -l</span></span><br><span class="line"><span class="comment">#git仓库目录</span></span><br><span class="line">GIT_REPO=/var/git/blog.git</span><br><span class="line"><span class="comment">#临时文件目录</span></span><br><span class="line">TMP_GIT_CLONE=/var/git/tmp/blog</span><br><span class="line"><span class="comment">#虚拟主机目录</span></span><br><span class="line">PUBLIC_WWW=/home/wwwroot/blog.qicunshan.com</span><br><span class="line">rm -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span></span><br><span class="line">git <span class="built_in">clone</span> <span class="variable">$GIT_REPO</span> <span class="variable">$TMP_GIT_CLONE</span></span><br><span class="line">rm -rf <span class="variable">$&#123;PUBLIC_WWW&#125;</span>/*</span><br><span class="line">cp -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span> <span class="variable">$&#123;PUBLIC_WWW&#125;</span></span><br></pre></td></tr></table></figure><ul><li>git用户关于post-receive脚本及内容的权限、虚拟主机的权限：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#赋予文件、文件夹权限</span></span><br><span class="line">chmod 777 post-receive</span><br><span class="line">chmod 777 -R /var/git/tmp</span><br><span class="line">chmod 777 -R /home/wwwroot/blog.qicunshan.com</span><br><span class="line"><span class="comment">#赋予git用户权限</span></span><br><span class="line">chown git:git -R /var/git/tmp</span><br><span class="line">chown git:git -R /home/wwwroot/blog.qicunshan.com</span><br></pre></td></tr></table></figure></li></ul><h1 id="二、本机Hexo配置"><a href="#二、本机Hexo配置" class="headerlink" title="二、本机Hexo配置"></a>二、本机Hexo配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment">#repo: git@github.com:qicunshan/qicunshan.github.io.git</span></span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:qicunshan/qicunshan.github.io.git</span><br><span class="line">    vps:  git@服务器地址:/home/hexo.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>然后在hexo目录下执行Hexo g -d即可。</p>]]></content>
+    <content type="html"><![CDATA[<p>本文跳过阿里云创建git仓库、hexo部署到github的步骤，有需要的可以移步下面博客地址查看：</p><ol><li><p>在阿里云服务器上创建git远程仓库</p></li><li><p>使用Hexo建立博客</p></li></ol><h1 id="一、服务器相关配置"><a href="#一、服务器相关配置" class="headerlink" title="一、服务器相关配置"></a>一、服务器相关配置</h1><a id="more"></a><p>本文使用hexo在本地生成静态文件，然后将静态文件提交到个人服务器的git仓库，最后用Nginx提供web服务的方式。</p><h1 id="1、Nginx配置"><a href="#1、Nginx配置" class="headerlink" title="1、Nginx配置"></a>1、Nginx配置</h1><p>Nginx正常配置一个虚拟主机来存放静态文件即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">     &#123;</span><br><span class="line">         listen 80;</span><br><span class="line">         <span class="comment">#listen [::]:80;</span></span><br><span class="line">         server_name sjzlai.qicunshan.com ;</span><br><span class="line">         index index.html index.htm index.php default.html default.htm default.php;</span><br><span class="line">         root  /home/wwwroot/blog.qicunshan.com/blog;</span><br><span class="line"></span><br><span class="line">         <span class="comment">#include other.conf;</span></span><br><span class="line">         <span class="comment">#error_page   404   /404.html;</span></span><br><span class="line"></span><br><span class="line">         <span class="comment"># Deny access to PHP files in specific directory</span></span><br><span class="line">         <span class="comment">#location ~ /(wp-content|uploads|wp-includes|images)/.*\.php$ &#123; deny all; &#125;</span></span><br><span class="line"></span><br><span class="line">         include <span class="built_in">enable</span>-php.conf;</span><br><span class="line"></span><br><span class="line">         location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$</span><br><span class="line">         &#123;</span><br><span class="line">             expires      30d;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ .*\.(js|css)?$</span><br><span class="line">         &#123;</span><br><span class="line">             expires      12h;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ /.well-known &#123;</span><br><span class="line">             allow all;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         location ~ /\.</span><br><span class="line">         &#123;</span><br><span class="line">             deny all;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         access_log  /home/wwwlogs/blog.qicunshan.com.log;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure><p>需要注意的是：</p><ul><li><p>git用户的权限；</p></li><li><p>虚拟主机路径，且默认主页是index.html。</p></li></ul><h1 id="2、创建git仓库"><a href="#2、创建git仓库" class="headerlink" title="2、创建git仓库"></a>2、创建git仓库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建仓库目录</span></span><br><span class="line">mkdir blog.git</span><br><span class="line"><span class="comment">#进入仓库目录</span></span><br><span class="line"><span class="built_in">cd</span> blog.git</span><br><span class="line"><span class="comment">#创建仓库</span></span><br><span class="line">git init --bare</span><br></pre></td></tr></table></figure><p>创建完后可以使用下面命令测试一下仓库地址，克隆成功说明没有问题。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> 仓库地址</span><br></pre></td></tr></table></figure><h1 id="3、Git-hooks配置"><a href="#3、Git-hooks配置" class="headerlink" title="3、Git hooks配置"></a>3、Git hooks配置</h1><ul><li>新建脚本，使git hooks每次push完成之后，将仓库中的静态文件复制到Nginx对应的虚拟主机中；</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新建脚本</span></span><br><span class="line">vim post-receive</span><br></pre></td></tr></table></figure><h5 id="脚本内容如下"><a href="#脚本内容如下" class="headerlink" title="脚本内容如下:"></a>脚本内容如下:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash -l</span></span><br><span class="line"><span class="comment">#git仓库目录</span></span><br><span class="line">GIT_REPO=/var/git/blog.git</span><br><span class="line"><span class="comment">#临时文件目录</span></span><br><span class="line">TMP_GIT_CLONE=/var/git/tmp/blog</span><br><span class="line"><span class="comment">#虚拟主机目录</span></span><br><span class="line">PUBLIC_WWW=/home/wwwroot/blog.qicunshan.com</span><br><span class="line">rm -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span></span><br><span class="line">git <span class="built_in">clone</span> <span class="variable">$GIT_REPO</span> <span class="variable">$TMP_GIT_CLONE</span></span><br><span class="line">rm -rf <span class="variable">$&#123;PUBLIC_WWW&#125;</span>/*</span><br><span class="line">cp -rf <span class="variable">$&#123;TMP_GIT_CLONE&#125;</span> <span class="variable">$&#123;PUBLIC_WWW&#125;</span></span><br></pre></td></tr></table></figure><ul><li>git用户关于post-receive脚本及内容的权限、虚拟主机的权限：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#赋予文件、文件夹权限</span></span><br><span class="line">chmod 777 post-receive</span><br><span class="line">chmod 777 -R /var/git/tmp</span><br><span class="line">chmod 777 -R /home/wwwroot/blog.qicunshan.com</span><br><span class="line"><span class="comment">#赋予git用户权限</span></span><br><span class="line">chown git:git -R /var/git/tmp</span><br><span class="line">chown git:git -R /home/wwwroot/blog.qicunshan.com</span><br></pre></td></tr></table></figure></li></ul><h1 id="二、本机Hexo配置"><a href="#二、本机Hexo配置" class="headerlink" title="二、本机Hexo配置"></a>二、本机Hexo配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment">#repo: git@github.com:qicunshan/qicunshan.github.io.git</span></span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:qicunshan/qicunshan.github.io.git</span><br><span class="line">    vps:  git@服务器地址:/home/hexo.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>然后在hexo目录下执行Hexo g -d即可。</p>]]></content>
     
     <summary type="html">
     
@@ -344,11 +394,11 @@ sudo service docker restart         重启docker
     </summary>
     
     
-      <category term="阿里云" scheme="http://blog.56chzh.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
-    
       <category term="git" scheme="http://blog.56chzh.com/tags/git/"/>
     
       <category term="hexo" scheme="http://blog.56chzh.com/tags/hexo/"/>
+    
+      <category term="阿里云" scheme="http://blog.56chzh.com/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     
       <category term="github" scheme="http://blog.56chzh.com/tags/github/"/>
     
@@ -454,70 +504,6 @@ sudo service docker restart         重启docker
       <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
     
       <category term="find" scheme="http://blog.56chzh.com/tags/find/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>laravel项目报错</title>
-    <link href="http://blog.56chzh.com/2018/01/31/laravel%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99/"/>
-    <id>http://blog.56chzh.com/2018/01/31/laravel项目报错/</id>
-    <published>2018-01-31T03:41:47.000Z</published>
-    <updated>2018-04-09T06:08:59.452Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li><p>laravel项目return back()-&gt;withErrors($validator)或return back()-&gt;with(‘errors’,’原密码错误！’)在前台原密码错误的情况下不能正确显示错误信息，变成报错！</p></li><li><p>执行:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan --version</span><br></pre></td></tr></table></figure></li><li><p>查看版本,如果是5.2.26以上的,在路由文件routes.php删除web中间件分组</p></li></ul><a id="more"></a><ul><li>控制器Controller内返回错误内容</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">return</span> back()-&gt;withErrors([<span class="string">'用户名或密码错误'</span>]);</span><br></pre></td></tr></table></figure><ul><li>视图View内展示错误信息:</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    @<span class="keyword">if</span>(count(<span class="variable">$errors</span>) &gt; 0)</span><br><span class="line">        &lt;div class=<span class="string">"alert alert-danger"</span>&gt;</span><br><span class="line">            &lt;ul style=<span class="string">"color:red"</span>&gt;</span><br><span class="line">            @foreach(<span class="variable">$errors</span>-&gt;all() as <span class="variable">$error</span>)</span><br><span class="line">                &lt;li&gt;&#123;&#123;<span class="variable">$error</span>&#125;&#125;&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    @endif</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;laravel项目return back()-&amp;gt;withErrors($validator)或return back()-&amp;gt;with(‘errors’,’原密码错误！’)在前台原密码错误的情况下不能正确显示错误信息，变成报错！&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;执行:&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;php artisan --version&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查看版本,如果是5.2.26以上的,在路由文件routes.php删除web中间件分组&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="laravel" scheme="http://blog.56chzh.com/tags/laravel/"/>
-    
-      <category term="302" scheme="http://blog.56chzh.com/tags/302/"/>
-    
-      <category term="withErrors" scheme="http://blog.56chzh.com/tags/withErrors/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>lnmp配置修改</title>
-    <link href="http://blog.56chzh.com/2018/01/30/lnmp%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9/"/>
-    <id>http://blog.56chzh.com/2018/01/30/lnmp配置修改/</id>
-    <published>2018-01-30T04:00:42.000Z</published>
-    <updated>2018-04-09T06:08:59.453Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="linux环境下安装lnmp"><a href="#linux环境下安装lnmp" class="headerlink" title="linux环境下安装lnmp"></a>linux环境下安装lnmp</h1><ul><li>运行以下命令</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; <span class="built_in">cd</span> lnmp1.4 &amp;&amp; ./install.sh lnmp</span><br></pre></td></tr></table></figure><blockquote><p>根据自己的喜好安装Mysql版本.<br>  设置mysql的root密码.<br>  选择PHP版本<br>  选择是否安装内存优化<br>  选择Apache版本</p></blockquote><ul><li>提示”Press any key to install…or Press Ctrl+c to cancel”后，按回车键确认开始安装。<a id="more"></a><h1 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h1></li><li>如果显示Nginx: OK，MySQL: OK，PHP: OK</li></ul><h1 id="修改php-ini配置"><a href="#修改php-ini配置" class="headerlink" title="修改php.ini配置"></a>修改php.ini配置</h1><ul><li><p>将文件内display_error 打开, 之后可看到报错信息.</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dispaly_error</span> = <span class="literal">on</span></span><br></pre></td></tr></table></figure></li><li><p>原因是nginx不允许访问网站的上级目录</p><blockquote><p>解决方法:<br>  将设置了open_basedir的地方注释掉<br>  1.nginx的fastcgi.conf<br>  2.项目目录中的.user.ini</p></blockquote></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> fastcgi_param PHP_ADMIN_VALUE <span class="string">"open_basedir=<span class="variable">$decument_root</span>/:/tmp/:/proc/"</span>;</span></span><br></pre></td></tr></table></figure><h1 id="以上设置完成后-访问时报404"><a href="#以上设置完成后-访问时报404" class="headerlink" title="以上设置完成后,访问时报404"></a>以上设置完成后,访问时报404</h1><ul><li>原因:路由重写<h5 id="usr-local-nginx-conf-other-conf"><a href="#usr-local-nginx-conf-other-conf" class="headerlink" title="/usr/local/nginx/conf/other.conf"></a>/usr/local/nginx/conf/other.conf</h5></li><li>在此文件内填写<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (  !-f  <span class="variable">$request_filename</span>  )  &#123;</span><br><span class="line">rewrite  ^/(.*)$  /index.php last;<span class="comment">#rewrite</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;linux环境下安装lnmp&quot;&gt;&lt;a href=&quot;#linux环境下安装lnmp&quot; class=&quot;headerlink&quot; title=&quot;linux环境下安装lnmp&quot;&gt;&lt;/a&gt;linux环境下安装lnmp&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;运行以下命令&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.4.tar.gz &amp;amp;&amp;amp; &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; lnmp1.4 &amp;amp;&amp;amp; ./install.sh lnmp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;根据自己的喜好安装Mysql版本.&lt;br&gt;  设置mysql的root密码.&lt;br&gt;  选择PHP版本&lt;br&gt;  选择是否安装内存优化&lt;br&gt;  选择Apache版本&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;提示”Press any key to install…or Press Ctrl+c to cancel”后，按回车键确认开始安装。&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://blog.56chzh.com/tags/linux/"/>
-    
-      <category term="lnmp" scheme="http://blog.56chzh.com/tags/lnmp/"/>
-    
-      <category term="rewrite" scheme="http://blog.56chzh.com/tags/rewrite/"/>
     
   </entry>
   
